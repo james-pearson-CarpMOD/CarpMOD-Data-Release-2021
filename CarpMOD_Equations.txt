@@ -1,0 +1,806 @@
+Top-Level Model:
+Lake_Area_Model(t) = Lake_Area_Model(t - dt) + (Lake_Area_Calculation - Flow_1) * dt
+    INIT Lake_Area_Model = 15000
+    INFLOWS:
+        Lake_Area_Calculation = IF TIME < Lake_Fluctuation_Intiation_Year THEN Intial_Stochatic_Lake_Area ELSE "Fall_Lake_Area_+_Climate_Reducer"
+    OUTFLOWS:
+        Flow_1 = Lake_Area_Model
+Population_Age_1(t) = Population_Age_1(t - dt) + (Recruitment + Immigration_Age_1 - Survival_Age_1 - Mortality_Age_1) * dt
+    INIT Population_Age_1 = 50
+        TRANSIT TIME = 1
+        CAPACITY = INF
+        INFLOW LIMIT = INF
+    INFLOWS:
+        Recruitment = ((1-Embryo_Electroshocking_Rate_Actual) *(1-"All_Reduction_(Rotenone)_Actual"))*(Ricker_Stock_Recruitment_Equation_Actual)
+        Immigration_Age_1 = Immigrants_Age_1
+    OUTFLOWS:
+        Survival_Age_1 = CONVEYOR OUTFLOW
+        Mortality_Age_1 = LEAKAGE OUTFLOW
+            LEAKAGE FRACTION = Total_Mortality_Rate_Actual_Age_1
+Population_Age_10(t) = Population_Age_10(t - dt) + (Immigration_Age_10 + Survival_Age_9 - Survival_Age_10 - Mortality_Age_10) * dt
+    INIT Population_Age_10 = 0
+        TRANSIT TIME = 1
+    INFLOWS:
+        Immigration_Age_10 = Immigrants_Age_10
+        Survival_Age_9 = CONVEYOR OUTFLOW
+    OUTFLOWS:
+        Survival_Age_10 = CONVEYOR OUTFLOW
+        Mortality_Age_10 = LEAKAGE OUTFLOW
+            LEAKAGE FRACTION = Total_Mortality_Rate_Actual_Age_10
+Population_Age_11(t) = Population_Age_11(t - dt) + (Immigration_Age_11 + Survival_Age_10 - Survival_Age_11 - Mortality_Age_11) * dt
+    INIT Population_Age_11 = 0
+        TRANSIT TIME = 1
+    INFLOWS:
+        Immigration_Age_11 = Immigrants_Age_11
+        Survival_Age_10 = CONVEYOR OUTFLOW
+    OUTFLOWS:
+        Survival_Age_11 = CONVEYOR OUTFLOW
+        Mortality_Age_11 = LEAKAGE OUTFLOW
+            LEAKAGE FRACTION = Total_Mortality_Rate_Actual_Age_11
+Population_Age_12(t) = Population_Age_12(t - dt) + (Immigration_Age_12 + Survival_Age_11 - Survival_Age_12 - Mortality_Age_12) * dt
+    INIT Population_Age_12 = 0
+        TRANSIT TIME = 1
+    INFLOWS:
+        Immigration_Age_12 = Immigrants_Age_12
+        Survival_Age_11 = CONVEYOR OUTFLOW
+    OUTFLOWS:
+        Survival_Age_12 = CONVEYOR OUTFLOW
+        Mortality_Age_12 = LEAKAGE OUTFLOW
+            LEAKAGE FRACTION = Total_Mortality_Rate_Actual_Age_12
+Population_Age_13(t) = Population_Age_13(t - dt) + (Immigration_Age_13 + Survival_Age_12 - Survival_Age_13 - Mortality_Age_13) * dt
+    INIT Population_Age_13 = 0
+        TRANSIT TIME = 1
+    INFLOWS:
+        Immigration_Age_13 = Immigrants_Age_13
+        Survival_Age_12 = CONVEYOR OUTFLOW
+    OUTFLOWS:
+        Survival_Age_13 = CONVEYOR OUTFLOW
+        Mortality_Age_13 = LEAKAGE OUTFLOW
+            LEAKAGE FRACTION = Total_Mortality_Rate_Actual_Age_13
+Population_Age_14(t) = Population_Age_14(t - dt) + (Immigration_Age_14 + Survival_Age_13 - Survival_Age_14 - Mortality_Age_14) * dt
+    INIT Population_Age_14 = 0
+        TRANSIT TIME = 1
+    INFLOWS:
+        Immigration_Age_14 = Immigrants_Age_14
+        Survival_Age_13 = CONVEYOR OUTFLOW
+    OUTFLOWS:
+        Survival_Age_14 = CONVEYOR OUTFLOW
+        Mortality_Age_14 = LEAKAGE OUTFLOW
+            LEAKAGE FRACTION = Total_Mortality_Rate_Actual_Age_14
+Population_Age_15(t) = Population_Age_15(t - dt) + (Immigration_Age_15 + Survival_Age_14 - Survival_Age_15 - Mortality_Age_15) * dt
+    INIT Population_Age_15 = 0
+        TRANSIT TIME = 1
+    INFLOWS:
+        Immigration_Age_15 = Immigrants_Age_15
+        Survival_Age_14 = CONVEYOR OUTFLOW
+    OUTFLOWS:
+        Survival_Age_15 = CONVEYOR OUTFLOW
+        Mortality_Age_15 = LEAKAGE OUTFLOW
+            LEAKAGE FRACTION = Total_Mortality_Rate_Actual_Age_15
+Population_Age_16(t) = Population_Age_16(t - dt) + (Immigration_Age_16 + Survival_Age_15 - Survival_Age_16 - Mortality_Age_16) * dt
+    INIT Population_Age_16 = 0
+        TRANSIT TIME = 1
+    INFLOWS:
+        Immigration_Age_16 = Immigrants_Age_16
+        Survival_Age_15 = CONVEYOR OUTFLOW
+    OUTFLOWS:
+        Survival_Age_16 = CONVEYOR OUTFLOW
+        Mortality_Age_16 = LEAKAGE OUTFLOW
+            LEAKAGE FRACTION = Total_Mortality_Rate_Actual_Age_16
+Population_Age_17(t) = Population_Age_17(t - dt) + (Immigration_Age_17 + Survival_Age_16 - Survival_Age_17 - Mortality_Age_17) * dt
+    INIT Population_Age_17 = 0
+        TRANSIT TIME = 1
+    INFLOWS:
+        Immigration_Age_17 = Immigrants_Age_17
+        Survival_Age_16 = CONVEYOR OUTFLOW
+    OUTFLOWS:
+        Survival_Age_17 = CONVEYOR OUTFLOW
+        Mortality_Age_17 = LEAKAGE OUTFLOW
+            LEAKAGE FRACTION = Total_Mortality_Rate_Actual_Age_17
+Population_Age_18(t) = Population_Age_18(t - dt) + (Immigration_Age_18 + Survival_Age_17 - Survival_Age_18 - Mortality_Age_18) * dt
+    INIT Population_Age_18 = 0
+        TRANSIT TIME = 1
+    INFLOWS:
+        Immigration_Age_18 = Immigrants_Age_18
+        Survival_Age_17 = CONVEYOR OUTFLOW
+    OUTFLOWS:
+        Survival_Age_18 = CONVEYOR OUTFLOW
+        Mortality_Age_18 = LEAKAGE OUTFLOW
+            LEAKAGE FRACTION = Total_Mortality_Rate_Actual_Age_18
+Population_Age_19(t) = Population_Age_19(t - dt) + (Immigration_Age_19 + Survival_Age_18 - Survival_Age_19 - Mortality_Age_19) * dt
+    INIT Population_Age_19 = 0
+        TRANSIT TIME = 1
+    INFLOWS:
+        Immigration_Age_19 = Immigrants_Age_19
+        Survival_Age_18 = CONVEYOR OUTFLOW
+    OUTFLOWS:
+        Survival_Age_19 = CONVEYOR OUTFLOW
+        Mortality_Age_19 = LEAKAGE OUTFLOW
+            LEAKAGE FRACTION = Total_Mortality_Rate_Actual_Age_19
+Population_Age_2(t) = Population_Age_2(t - dt) + (Immigration_Age_2 + Survival_Age_1 - Survival_Age_2 - Mortality_Age_2) * dt
+    INIT Population_Age_2 = 0
+        TRANSIT TIME = 1
+    INFLOWS:
+        Immigration_Age_2 = Immigrants_Age_2
+        Survival_Age_1 = CONVEYOR OUTFLOW
+    OUTFLOWS:
+        Survival_Age_2 = CONVEYOR OUTFLOW
+        Mortality_Age_2 = LEAKAGE OUTFLOW
+            LEAKAGE FRACTION = Total_Mortality_Rate_Actual_Age_2
+Population_Age_20(t) = Population_Age_20(t - dt) + (Immigration_Age_20 + Survival_Age_19 - Survival_Age_20 - Mortality_Age_20) * dt
+    INIT Population_Age_20 = 0
+        TRANSIT TIME = 1
+    INFLOWS:
+        Immigration_Age_20 = Immigrants_Age_20
+        Survival_Age_19 = CONVEYOR OUTFLOW
+    OUTFLOWS:
+        Survival_Age_20 = CONVEYOR OUTFLOW
+        Mortality_Age_20 = LEAKAGE OUTFLOW
+            LEAKAGE FRACTION = Total_Mortality_Rate_Actual_Age_20
+Population_Age_3(t) = Population_Age_3(t - dt) + (Immigration_Age_3 + Survival_Age_2 - Survival_Age_3 - Mortality_Age_3) * dt
+    INIT Population_Age_3 = 0
+        TRANSIT TIME = 1
+    INFLOWS:
+        Immigration_Age_3 = Immigrants_Age_3
+        Survival_Age_2 = CONVEYOR OUTFLOW
+    OUTFLOWS:
+        Survival_Age_3 = CONVEYOR OUTFLOW
+        Mortality_Age_3 = LEAKAGE OUTFLOW
+            LEAKAGE FRACTION = Total_Mortality_Rate_Actual_Age_3
+Population_Age_4(t) = Population_Age_4(t - dt) + (Immigration_Age_4 + Survival_Age_3 - Survival_Age_4 - Mortality_Age_4) * dt
+    INIT Population_Age_4 = 0
+        TRANSIT TIME = 1
+    INFLOWS:
+        Immigration_Age_4 = Immigrants_Age_4
+        Survival_Age_3 = CONVEYOR OUTFLOW
+    OUTFLOWS:
+        Survival_Age_4 = CONVEYOR OUTFLOW
+        Mortality_Age_4 = LEAKAGE OUTFLOW
+            LEAKAGE FRACTION = Total_Mortality_Rate_Actual_Age_4
+Population_Age_5(t) = Population_Age_5(t - dt) + (Immigration_Age_5 + Survival_Age_4 - Survival_Age_5 - Mortality_Age_5) * dt
+    INIT Population_Age_5 = 0
+        TRANSIT TIME = 1
+    INFLOWS:
+        Immigration_Age_5 = Immigrants_Age_5
+        Survival_Age_4 = CONVEYOR OUTFLOW
+    OUTFLOWS:
+        Survival_Age_5 = CONVEYOR OUTFLOW
+        Mortality_Age_5 = LEAKAGE OUTFLOW
+            LEAKAGE FRACTION = Total_Mortality_Rate_Actual_Age_5
+Population_Age_6(t) = Population_Age_6(t - dt) + (Immigration_Age_6 + Survival_Age_5 - Survival_Age_6 - Mortality_Age_6) * dt
+    INIT Population_Age_6 = 0
+        TRANSIT TIME = 1
+    INFLOWS:
+        Immigration_Age_6 = Immigrants_Age_6
+        Survival_Age_5 = CONVEYOR OUTFLOW
+    OUTFLOWS:
+        Survival_Age_6 = CONVEYOR OUTFLOW
+        Mortality_Age_6 = LEAKAGE OUTFLOW
+            LEAKAGE FRACTION = Total_Mortality_Rate_Actual_Age_6
+Population_Age_7(t) = Population_Age_7(t - dt) + (Immigration_Age_7 + Survival_Age_6 - Survival_Age_7 - Mortality_Age_7) * dt
+    INIT Population_Age_7 = 0
+        TRANSIT TIME = 1
+    INFLOWS:
+        Immigration_Age_7 = Immigrants_Age_7
+        Survival_Age_6 = CONVEYOR OUTFLOW
+    OUTFLOWS:
+        Survival_Age_7 = CONVEYOR OUTFLOW
+        Mortality_Age_7 = LEAKAGE OUTFLOW
+            LEAKAGE FRACTION = Total_Mortality_Rate_Actual_Age_7
+Population_Age_8(t) = Population_Age_8(t - dt) + (Immigration_Age_8 + Survival_Age_7 - Survival_Age_8 - Mortality_Age_8) * dt
+    INIT Population_Age_8 = 0
+        TRANSIT TIME = 1
+    INFLOWS:
+        Immigration_Age_8 = Immigrants_Age_8
+        Survival_Age_7 = CONVEYOR OUTFLOW
+    OUTFLOWS:
+        Survival_Age_8 = CONVEYOR OUTFLOW
+        Mortality_Age_8 = LEAKAGE OUTFLOW
+            LEAKAGE FRACTION = Total_Mortality_Rate_Actual_Age_8
+Population_Age_9(t) = Population_Age_9(t - dt) + (Immigration_Age_9 + Survival_Age_8 - Survival_Age_9 - Mortality_Age_9) * dt
+    INIT Population_Age_9 = 0
+        TRANSIT TIME = 1
+    INFLOWS:
+        Immigration_Age_9 = Immigrants_Age_9
+        Survival_Age_8 = CONVEYOR OUTFLOW
+    OUTFLOWS:
+        Survival_Age_9 = CONVEYOR OUTFLOW
+        Mortality_Age_9 = LEAKAGE OUTFLOW
+            LEAKAGE FRACTION = Total_Mortality_Rate_Actual_Age_9
+"100_kg/ha" = 100
+"50_kg/ha" = 50
+Adult_Reduction_Rate = Adult_Reduction_Rate_Actual
+Adult_Reduction_Rate_Actual = IF (TIME < Removal_Implementation_Year) THEN 0 ELSE IF (Lake_Area_Input < LW_Lake_Area_CH) THEN Flex_Adult_Reuction_Rate_Bellmore ELSE 0
+Adult_Reduction_Rate_Age_1 = IF Average_Length_Age_1 < Length_of_Adult_Reduction THEN 0 ELSE Adult_Reduction_Rate_Actual
+Adult_Reduction_Rate_Age_10 = IF Average_Length_Age_10 < Length_of_Adult_Reduction THEN 0 ELSE Adult_Reduction_Rate_Actual
+Adult_Reduction_Rate_Age_11 = IF Average_Length_Age_11 < Length_of_Adult_Reduction THEN 0 ELSE Adult_Reduction_Rate_Actual
+Adult_Reduction_Rate_Age_12 = IF Average_Length_Age_12 < Length_of_Adult_Reduction THEN 0 ELSE Adult_Reduction_Rate_Actual
+Adult_Reduction_Rate_Age_13 = IF Average_Length_Age_13 < Length_of_Adult_Reduction THEN 0 ELSE Adult_Reduction_Rate_Actual
+Adult_Reduction_Rate_Age_14 = IF Average_Length_Age_14 < Length_of_Adult_Reduction THEN 0 ELSE Adult_Reduction_Rate_Actual
+Adult_Reduction_Rate_Age_15 = IF Average_Length_Age_15 < Length_of_Adult_Reduction THEN 0 ELSE Adult_Reduction_Rate_Actual
+Adult_Reduction_Rate_Age_16 = IF Average_Length_Age_16 < Length_of_Adult_Reduction THEN 0 ELSE Adult_Reduction_Rate_Actual
+Adult_Reduction_Rate_Age_17 = IF Average_Length_Age_17 < Length_of_Adult_Reduction THEN 0 ELSE Adult_Reduction_Rate_Actual
+Adult_Reduction_Rate_Age_18 = IF Average_Length_Age_18 < Length_of_Adult_Reduction THEN 0 ELSE Adult_Reduction_Rate_Actual
+Adult_Reduction_Rate_Age_19 = IF Average_Length_Age_19 < Length_of_Adult_Reduction THEN 0 ELSE Adult_Reduction_Rate_Actual
+Adult_Reduction_Rate_Age_2 = IF Average_Length_Age_2 < Length_of_Adult_Reduction THEN 0 ELSE Adult_Reduction_Rate_Actual
+Adult_Reduction_Rate_Age_20 = IF Average_Length_Age_20 < Length_of_Adult_Reduction THEN 0 ELSE Adult_Reduction_Rate_Actual
+Adult_Reduction_Rate_Age_3 = IF Average_Length_Age_3 < Length_of_Adult_Reduction THEN 0 ELSE Adult_Reduction_Rate_Actual
+Adult_Reduction_Rate_Age_4 = IF Average_Length_Age_4 < Length_of_Adult_Reduction THEN 0 ELSE Adult_Reduction_Rate_Actual
+Adult_Reduction_Rate_Age_5 = IF Average_Length_Age_5 < Length_of_Adult_Reduction THEN 0 ELSE Adult_Reduction_Rate_Actual
+Adult_Reduction_Rate_Age_6 = IF Average_Length_Age_6 < Length_of_Adult_Reduction THEN 0 ELSE Adult_Reduction_Rate_Actual
+Adult_Reduction_Rate_Age_7 = IF Average_Length_Age_7 < Length_of_Adult_Reduction THEN 0 ELSE Adult_Reduction_Rate_Actual
+Adult_Reduction_Rate_Age_8 = IF Average_Length_Age_8 < Length_of_Adult_Reduction THEN 0 ELSE Adult_Reduction_Rate_Actual
+Adult_Reduction_Rate_Age_9 = IF Average_Length_Age_9 < Length_of_Adult_Reduction THEN 0 ELSE Adult_Reduction_Rate_Actual
+Age_0 = 0
+Age_1 = 1
+Age_10 = 10
+Age_11 = 11
+Age_12 = 12
+Age_13 = 13
+Age_14 = 14
+Age_15 = 15
+Age_16 = 16
+Age_17 = 17
+Age_18 = 18
+Age_19 = 19
+Age_2 = 2
+Age_20 = 20
+Age_3 = 3
+Age_4 = 4
+Age_5 = 5
+Age_6 = 6
+Age_7 = 7
+Age_8 = 8
+Age_9 = 9
+"All_Reduction_(Rotenone)" = 0
+"All_Reduction_(Rotenone)_Actual" = IF (TIME < Removal_Implementation_Year) THEN 0 ELSE IF (Lake_Area_Input < LW_Lake_Area_Rotenone) THEN "All_Reduction_(Rotenone)" ELSE 0
+Alpha_Co_Charadriiformes_FMR = 11.49
+Alpha_Co_Pelicaniformes_FMR = 3.9
+Alpha_Coefficent_Recruitment = LOGNORMAL(20.0825,16.1242)
+Alpha_Coefficent_WL_Relationship = 4.531975
+Annual_Finite_Rate_w_Density_Dependne_Coefficent = 0.0001
+Average_AWP_Colony_Size = 2719*Avian_Population_Multiplier
+Average_AWP_Daily_Consumption_in_g = (Average_AWP_DEE)/(Average_Energy_Density_of_Carp)
+Average_AWP_Days_Present = 100
+Average_AWP_DEE = ((Alpha_Co_Pelicaniformes_FMR)*(Average_AWP_Weight)^(Beta_Co_Pelicaniformes_FMR))/(FMR_Multiplier)
+Average_AWP_Weight = 7000
+Average_DCC_Colony_Size = 247*Avian_Population_Multiplier
+Average_DCC_Daily_Consumption_in_g = (Average_DCC_DEE)/(Average_Energy_Density_of_Carp)
+Average_DCC_Days_Present = 100
+Average_DCC_DEE = ((Alpha_Co_Pelicaniformes_FMR)*(Average_DCC_Weight)^(Beta_Co_Pelicaniformes_FMR))/(FMR_Multiplier)
+Average_DCC_Weight = 2250
+Average_Energy_Density_of_Carp = 6.98
+Average_Length_Age_0 = L_Inf*(1-EXP(-Growth_Co*(Age_0-Theoretical_Length_Age_0)))
+Average_Length_Age_1 = L_Inf*(1-EXP(-Growth_Co*(Age_1-Theoretical_Length_Age_0)))
+Average_Length_Age_10 = L_Inf*(1-EXP(-Growth_Co*(Age_10-Theoretical_Length_Age_0)))
+Average_Length_Age_11 = L_Inf*(1-EXP(-Growth_Co*(Age_11-Theoretical_Length_Age_0)))
+Average_Length_Age_12 = L_Inf*(1-EXP(-Growth_Co*(Age_12-Theoretical_Length_Age_0)))
+Average_Length_Age_13 = L_Inf*(1-EXP(-Growth_Co*(Age_13-Theoretical_Length_Age_0)))
+Average_Length_Age_14 = L_Inf*(1-EXP(-Growth_Co*(Age_14-Theoretical_Length_Age_0)))
+Average_Length_Age_15 = L_Inf*(1-EXP(-Growth_Co*(Age_15-Theoretical_Length_Age_0)))
+Average_Length_Age_16 = L_Inf*(1-EXP(-Growth_Co*(Age_16-Theoretical_Length_Age_0)))
+Average_Length_Age_17 = L_Inf*(1-EXP(-Growth_Co*(Age_17-Theoretical_Length_Age_0)))
+Average_Length_Age_18 = L_Inf*(1-EXP(-Growth_Co*(Age_18-Theoretical_Length_Age_0)))
+Average_Length_Age_19 = L_Inf*(1-EXP(-Growth_Co*(Age_19-Theoretical_Length_Age_0)))
+Average_Length_Age_2 = L_Inf*(1-EXP(-Growth_Co*(Age_2-Theoretical_Length_Age_0)))
+Average_Length_Age_20 = L_Inf*(1-EXP(-Growth_Co*(Age_20-Theoretical_Length_Age_0)))
+Average_Length_Age_3 = L_Inf*(1-EXP(-Growth_Co*(Age_3-Theoretical_Length_Age_0)))
+Average_Length_Age_4 = L_Inf*(1-EXP(-Growth_Co*(Age_4-Theoretical_Length_Age_0)))
+Average_Length_Age_5 = L_Inf*(1-EXP(-Growth_Co*(Age_5-Theoretical_Length_Age_0)))
+Average_Length_Age_6 = L_Inf*(1-EXP(-Growth_Co*(Age_6-Theoretical_Length_Age_0)))
+Average_Length_Age_7 = L_Inf*(1-EXP(-Growth_Co*(Age_7-Theoretical_Length_Age_0)))
+Average_Length_Age_8 = L_Inf*(1-EXP(-Growth_Co*(Age_8-Theoretical_Length_Age_0)))
+Average_Length_Age_9 = L_Inf*(1-EXP(-Growth_Co*(Age_9-Theoretical_Length_Age_0)))
+Average_Tern_Colony_Size = 522*Avian_Population_Multiplier
+Average_Tern_Days_Present = 100
+Average_Tern_DEE = ((Alpha_Co_Charadriiformes_FMR)*(Average_Tern_Weight)^(Beta_Co_Charadriiformes_FMR))/(FMR_Multiplier)
+Average_Tern_Weight = 650
+Average_Terns_Daily_Consumption_in_g = (Average_Tern_DEE)/(Average_Energy_Density_of_Carp)
+"Average_Weigth_(g)_Age_0" = (10^((-Alpha_Coefficent_WL_Relationship)+(Beta_Coefficent_WL_Relationship)*LOG10(Average_Length_Age_0)))
+"Average_Weigth_(g)_Age_1" = (10^((-Alpha_Coefficent_WL_Relationship)+(Beta_Coefficent_WL_Relationship)*LOG10(Average_Length_Age_1)))
+"Average_Weigth_(g)_Age_10" = (10^((-Alpha_Coefficent_WL_Relationship)+(Beta_Coefficent_WL_Relationship)*LOG10(Average_Length_Age_10)))
+"Average_Weigth_(g)_Age_11" = (10^((-Alpha_Coefficent_WL_Relationship)+(Beta_Coefficent_WL_Relationship)*LOG10(Average_Length_Age_11)))
+"Average_Weigth_(g)_Age_12" = (10^((-Alpha_Coefficent_WL_Relationship)+(Beta_Coefficent_WL_Relationship)*LOG10(Average_Length_Age_12)))
+"Average_Weigth_(g)_Age_13" = (10^((-Alpha_Coefficent_WL_Relationship)+(Beta_Coefficent_WL_Relationship)*LOG10(Average_Length_Age_13)))
+"Average_Weigth_(g)_Age_14" = (10^((-Alpha_Coefficent_WL_Relationship)+(Beta_Coefficent_WL_Relationship)*LOG10(Average_Length_Age_14)))
+"Average_Weigth_(g)_Age_15" = (10^((-Alpha_Coefficent_WL_Relationship)+(Beta_Coefficent_WL_Relationship)*LOG10(Average_Length_Age_15)))
+"Average_Weigth_(g)_Age_16" = (10^((-Alpha_Coefficent_WL_Relationship)+(Beta_Coefficent_WL_Relationship)*LOG10(Average_Length_Age_16)))
+"Average_Weigth_(g)_Age_17" = (10^((-Alpha_Coefficent_WL_Relationship)+(Beta_Coefficent_WL_Relationship)*LOG10(Average_Length_Age_17)))
+"Average_Weigth_(g)_Age_18" = (10^((-Alpha_Coefficent_WL_Relationship)+(Beta_Coefficent_WL_Relationship)*LOG10(Average_Length_Age_18)))
+"Average_Weigth_(g)_Age_19" = (10^((-Alpha_Coefficent_WL_Relationship)+(Beta_Coefficent_WL_Relationship)*LOG10(Average_Length_Age_19)))
+"Average_Weigth_(g)_Age_2" = (10^((-Alpha_Coefficent_WL_Relationship)+(Beta_Coefficent_WL_Relationship)*LOG10(Average_Length_Age_2)))
+"Average_Weigth_(g)_Age_20" = (10^((-Alpha_Coefficent_WL_Relationship)+(Beta_Coefficent_WL_Relationship)*LOG10(Average_Length_Age_20)))
+"Average_Weigth_(g)_Age_3" = (10^((-Alpha_Coefficent_WL_Relationship)+(Beta_Coefficent_WL_Relationship)*LOG10(Average_Length_Age_3)))
+"Average_Weigth_(g)_Age_4" = (10^((-Alpha_Coefficent_WL_Relationship)+(Beta_Coefficent_WL_Relationship)*LOG10(Average_Length_Age_4)))
+"Average_Weigth_(g)_Age_5" = (10^((-Alpha_Coefficent_WL_Relationship)+(Beta_Coefficent_WL_Relationship)*LOG10(Average_Length_Age_5)))
+"Average_Weigth_(g)_Age_6" = (10^((-Alpha_Coefficent_WL_Relationship)+(Beta_Coefficent_WL_Relationship)*LOG10(Average_Length_Age_6)))
+"Average_Weigth_(g)_Age_7" = (10^((-Alpha_Coefficent_WL_Relationship)+(Beta_Coefficent_WL_Relationship)*LOG10(Average_Length_Age_7)))
+"Average_Weigth_(g)_Age_8" = (10^((-Alpha_Coefficent_WL_Relationship)+(Beta_Coefficent_WL_Relationship)*LOG10(Average_Length_Age_8)))
+"Average_Weigth_(g)_Age_9" = (10^((-Alpha_Coefficent_WL_Relationship)+(Beta_Coefficent_WL_Relationship)*LOG10(Average_Length_Age_9)))
+"Average_Weigth_(kg)_Age_0" = "Average_Weigth_(g)_Age_0"/Kg_to_g_Conversion
+"Average_Weigth_(kg)_Age_1" = "Average_Weigth_(g)_Age_1"/Kg_to_g_Conversion
+"Average_Weigth_(kg)_Age_10" = "Average_Weigth_(g)_Age_10"/Kg_to_g_Conversion
+"Average_Weigth_(kg)_Age_11" = "Average_Weigth_(g)_Age_11"/Kg_to_g_Conversion
+"Average_Weigth_(kg)_Age_12" = "Average_Weigth_(g)_Age_12"/Kg_to_g_Conversion
+"Average_Weigth_(kg)_Age_13" = "Average_Weigth_(g)_Age_13"/Kg_to_g_Conversion
+"Average_Weigth_(kg)_Age_14" = "Average_Weigth_(g)_Age_14"/Kg_to_g_Conversion
+"Average_Weigth_(kg)_Age_15" = "Average_Weigth_(g)_Age_15"/Kg_to_g_Conversion
+"Average_Weigth_(kg)_Age_16" = "Average_Weigth_(g)_Age_16"/Kg_to_g_Conversion
+"Average_Weigth_(kg)_Age_17" = "Average_Weigth_(g)_Age_17"/Kg_to_g_Conversion
+"Average_Weigth_(kg)_Age_18" = "Average_Weigth_(g)_Age_18"/Kg_to_g_Conversion
+"Average_Weigth_(kg)_Age_19" = "Average_Weigth_(g)_Age_19"/Kg_to_g_Conversion
+"Average_Weigth_(kg)_Age_2" = "Average_Weigth_(g)_Age_2"/Kg_to_g_Conversion
+"Average_Weigth_(kg)_Age_20" = "Average_Weigth_(g)_Age_20"/Kg_to_g_Conversion
+"Average_Weigth_(kg)_Age_3" = "Average_Weigth_(g)_Age_3"/Kg_to_g_Conversion
+"Average_Weigth_(kg)_Age_4" = "Average_Weigth_(g)_Age_4"/Kg_to_g_Conversion
+"Average_Weigth_(kg)_Age_5" = "Average_Weigth_(g)_Age_5"/Kg_to_g_Conversion
+"Average_Weigth_(kg)_Age_6" = "Average_Weigth_(g)_Age_6"/Kg_to_g_Conversion
+"Average_Weigth_(kg)_Age_7" = "Average_Weigth_(g)_Age_7"/Kg_to_g_Conversion
+"Average_Weigth_(kg)_Age_8" = "Average_Weigth_(g)_Age_8"/Kg_to_g_Conversion
+"Average_Weigth_(kg)_Age_9" = "Average_Weigth_(g)_Age_9"/Kg_to_g_Conversion
+Average_Yearly_Diet_Composition = IF Type_1 > 1 THEN 1 ELSE Type_1
+Avian_Mortality_Rate_Age_1 = Total_Avian_Mortality_Rate_Age_1
+Avian_Mortality_Rate_Age_10 = IF (TIME<Avian_Predation_Implementation_Year) THEN 0 ELSE IF Total_Avian_Mortality_Rate_Age_10 = 1 THEN 0.999 ELSE Total_Avian_Mortality_Rate_Age_10
+Avian_Mortality_Rate_Age_11 = IF (TIME<Avian_Predation_Implementation_Year) THEN 0 ELSE IF Total_Avian_Mortality_Rate_Age_11 = 1 THEN 0.999 ELSE Total_Avian_Mortality_Rate_Age_11
+Avian_Mortality_Rate_Age_12 = IF (TIME<Avian_Predation_Implementation_Year) THEN 0 ELSE IF Total_Avian_Mortality_Rate_Age_12 = 1 THEN 0.999 ELSE Total_Avian_Mortality_Rate_Age_12
+Avian_Mortality_Rate_Age_13 = IF (TIME<Avian_Predation_Implementation_Year) THEN 0 ELSE IF Total_Avian_Mortality_Rate_Age_13 = 1 THEN 0.999 ELSE Total_Avian_Mortality_Rate_Age_13
+Avian_Mortality_Rate_Age_14 = IF (TIME<Avian_Predation_Implementation_Year) THEN 0 ELSE IF Total_Avian_Mortality_Rate_Age_14 = 1 THEN 0.999 ELSE Avian_Predation_Implementation_Year
+Avian_Mortality_Rate_Age_15 = IF (TIME<Avian_Predation_Implementation_Year) THEN 0 ELSE IF Total_Avian_Mortality_Rate_Age_15 = 1 THEN 0.999 ELSE Total_Avian_Mortality_Rate_Age_15
+Avian_Mortality_Rate_Age_16 = IF (TIME<Avian_Predation_Implementation_Year) THEN 0 ELSE IF Total_Avian_Mortality_Rate_Age_16 = 1 THEN 0.999 ELSE Total_Avian_Mortality_Rate_Age_16
+Avian_Mortality_Rate_Age_17 = IF (TIME<Avian_Predation_Implementation_Year) THEN 0 ELSE IF Total_Avian_Mortality_Rate_Age_17 = 1 THEN 0.999 ELSE Total_Avian_Mortality_Rate_Age_17
+Avian_Mortality_Rate_Age_18 = IF (TIME<Avian_Predation_Implementation_Year) THEN 0 ELSE IF Total_Avian_Mortality_Rate_Age_18 = 1 THEN 0.999 ELSE Total_Avian_Mortality_Rate_Age_18
+Avian_Mortality_Rate_Age_19 = IF (TIME<Avian_Predation_Implementation_Year) THEN 0 ELSE IF Total_Avian_Mortality_Rate_Age_19 = 1 THEN 0.999 ELSE Total_Avian_Mortality_Rate_Age_19
+Avian_Mortality_Rate_Age_2 = Total_Avian_Mortality_Rate_Age_2
+Avian_Mortality_Rate_Age_20 = IF (TIME<Avian_Predation_Implementation_Year) THEN 0 ELSE IF Total_Avian_Mortality_Rate_Age_20 = 1 THEN 0.999 ELSE Total_Avian_Mortality_Rate_Age_20
+Avian_Mortality_Rate_Age_3 = IF (TIME<Avian_Predation_Implementation_Year) THEN 0 ELSE IF Total_Avian_Mortality_Rate_Age_3 = 1 THEN 0.999 ELSE Total_Avian_Mortality_Rate_Age_3
+Avian_Mortality_Rate_Age_4 = IF (TIME<Avian_Predation_Implementation_Year) THEN 0 ELSE IF Total_Avian_Mortality_Rate_Age_4 = 1 THEN 0.999 ELSE Total_Avian_Mortality_Rate_Age_4
+Avian_Mortality_Rate_Age_5 = IF (TIME<Avian_Predation_Implementation_Year) THEN 0 ELSE IF Total_Avian_Mortality_Rate_Age_5 = 1 THEN 0.999 ELSE Total_Avian_Mortality_Rate_Age_5
+Avian_Mortality_Rate_Age_6 = IF (TIME<Avian_Predation_Implementation_Year) THEN 0 ELSE IF Total_Avian_Mortality_Rate_Age_6 = 1 THEN 0.999 ELSE Total_Avian_Mortality_Rate_Age_6
+Avian_Mortality_Rate_Age_7 = IF (TIME<Avian_Predation_Implementation_Year) THEN 0 ELSE IF Total_Avian_Mortality_Rate_Age_7 = 1 THEN 0.999 ELSE Total_Avian_Mortality_Rate_Age_7
+Avian_Mortality_Rate_Age_8 = IF (TIME<Avian_Predation_Implementation_Year) THEN 0 ELSE IF Total_Avian_Mortality_Rate_Age_8 = 1 THEN 0.999 ELSE Total_Avian_Mortality_Rate_Age_8
+Avian_Mortality_Rate_Age_9 = IF (TIME<Avian_Predation_Implementation_Year) THEN 0 ELSE IF Total_Avian_Mortality_Rate_Age_9 = 1 THEN 0.999 ELSE Total_Avian_Mortality_Rate_Age_9
+Avian_Population_Multiplier = IF Lake_Area_Input > 15000 THEN 1 ELSE Lake_Area_Input/15000
+Avian_Predation_Implementation_Year = 5
+AWP_Adult_Proportion = 0.1
+AWP_Juvenile_Proportion = 0.9
+Beta_Co_Charadriiformes_FMR = 0.718
+Beta_Co_Pelicaniformes_FMR = 0.871
+Beta_Coefficent_Recruitment = LOGNORMAL(0.0162,0.0039)
+Beta_Coefficent_WL_Relationship = 2.869073
+Blitzen_R_Dis_Acutal = NORMAL(Mean_Blitzen_R_Dis,StD_Blitzen_R_Dis)
+Blitzen_R_WY_CMS_Coefficent = 14.860
+Climate_Reducer = 0.25
+Climatic_Multiplier_Mean = 0
+Climatic_Multiplier_Std = 0
+DD_Mortality_Age_1 = 1-EXP(-Inst_Mortality_Mortality_Age_1)+Annual_Finite_Rate_w_Density_Dependne_Coefficent*"Density_Age_1_+_indi_per_Ha"
+DD_Mortality_Age_10 = 1-EXP(-Inst_Mortality_Mortality_Age_10)+Annual_Finite_Rate_w_Density_Dependne_Coefficent*"Density_Age_1_+_indi_per_Ha"
+DD_Mortality_Age_11 = 1-EXP(-Inst_Mortality_Mortality_Age_11)+Annual_Finite_Rate_w_Density_Dependne_Coefficent*"Density_Age_1_+_indi_per_Ha"
+DD_Mortality_Age_12 = 1-EXP(-Inst_Mortality_Mortality_Age_12)+Annual_Finite_Rate_w_Density_Dependne_Coefficent*"Density_Age_1_+_indi_per_Ha"
+DD_Mortality_Age_13 = 1-EXP(-Inst_Mortality_Mortality_Age_13)+Annual_Finite_Rate_w_Density_Dependne_Coefficent*"Density_Age_1_+_indi_per_Ha"
+DD_Mortality_Age_14 = 1-EXP(-Inst_Mortality_Mortality_Age_14)+Annual_Finite_Rate_w_Density_Dependne_Coefficent*"Density_Age_1_+_indi_per_Ha"
+DD_Mortality_Age_15 = 1-EXP(-Inst_Mortality_Mortality_Age_15)+Annual_Finite_Rate_w_Density_Dependne_Coefficent*"Density_Age_1_+_indi_per_Ha"
+DD_Mortality_Age_16 = 1-EXP(-Inst_Mortality_Mortality_Age_16)+Annual_Finite_Rate_w_Density_Dependne_Coefficent*"Density_Age_1_+_indi_per_Ha"
+DD_Mortality_Age_17 = 1-EXP(-Inst_Mortality_Mortality_Age_17)+Annual_Finite_Rate_w_Density_Dependne_Coefficent*"Density_Age_1_+_indi_per_Ha"
+DD_Mortality_Age_18 = 1-EXP(-Inst_Mortality_Mortality_Age_18)+Annual_Finite_Rate_w_Density_Dependne_Coefficent*"Density_Age_1_+_indi_per_Ha"
+DD_Mortality_Age_19 = 1-EXP(-Inst_Mortality_Mortality_Age_19)+Annual_Finite_Rate_w_Density_Dependne_Coefficent*"Density_Age_1_+_indi_per_Ha"
+DD_Mortality_Age_2 = 1-EXP(-Inst_Mortality_Mortality_Age_2)+Annual_Finite_Rate_w_Density_Dependne_Coefficent*"Density_Age_1_+_indi_per_Ha"
+DD_Mortality_Age_20 = 1-EXP(-Inst_Mortality_Mortality_Age_20)+Annual_Finite_Rate_w_Density_Dependne_Coefficent*"Density_Age_1_+_indi_per_Ha"
+DD_Mortality_Age_3 = 1-EXP(-Inst_Mortality_Mortality_Age_3)+Annual_Finite_Rate_w_Density_Dependne_Coefficent*"Density_Age_1_+_indi_per_Ha"
+DD_Mortality_Age_4 = 1-EXP(-Inst_Mortality_Mortality_Age_4)+Annual_Finite_Rate_w_Density_Dependne_Coefficent*"Density_Age_1_+_indi_per_Ha"
+DD_Mortality_Age_5 = 1-EXP(-Inst_Mortality_Mortality_Age_5)+Annual_Finite_Rate_w_Density_Dependne_Coefficent*"Density_Age_1_+_indi_per_Ha"
+DD_Mortality_Age_6 = 1-EXP(-Inst_Mortality_Mortality_Age_6)+Annual_Finite_Rate_w_Density_Dependne_Coefficent*"Density_Age_1_+_indi_per_Ha"
+DD_Mortality_Age_7 = 1-EXP(-Inst_Mortality_Mortality_Age_7)+Annual_Finite_Rate_w_Density_Dependne_Coefficent*"Density_Age_1_+_indi_per_Ha"
+DD_Mortality_Age_8 = 1-EXP(-Inst_Mortality_Mortality_Age_8)+Annual_Finite_Rate_w_Density_Dependne_Coefficent*"Density_Age_1_+_indi_per_Ha"
+DD_Mortality_Age_9 = 1-EXP(-Inst_Mortality_Mortality_Age_9)+Annual_Finite_Rate_w_Density_Dependne_Coefficent*"Density_Age_1_+_indi_per_Ha"
+"Density_Age_1_+_indi_per_Ha" = "Density_Age_1_+_per_Ha"/Lake_Area_Input
+"Density_Age_1_+_per_Ha" = Total_Population
+Density_Age_1_to_3 = Total_Biomass_Age_1 + Total_Biomass_Age_2 + Total_Biomass_Age_3
+Density_Age_1_to_3_kg_per_ha = Density_Age_1_to_3/Lake_Area_Input
+Density_Age_4_to_20 = Total_Biomass_Age_10 + Total_Biomass_Age_11 + Total_Biomass_Age_12 + Total_Biomass_Age_13 + Total_Biomass_Age_14 + Total_Biomass_Age_15 + Total_Biomass_Age_16 + Total_Biomass_Age_17 + Total_Biomass_Age_18 + Total_Biomass_Age_19 + Total_Biomass_Age_20 + Total_Biomass_Age_4 + Total_Biomass_Age_5 + Total_Biomass_Age_6 + Total_Biomass_Age_7 + Total_Biomass_Age_8 + Total_Biomass_Age_9
+Density_Age_4_to_20_kg_per_ha = Density_Age_4_to_20/Lake_Area_Input
+Diet_Composition_Alpha_Co = 0.0041
+Embryo_Electroshocking_Rate_Actual = IF (TIME < Removal_Implementation_Year) THEN 0 ELSE Embryo_Reductio_Rate
+Embryo_Reductio_Rate = 0
+"Fall_Lake_Area_+_Climate_Reducer" = Fall_Lake_Area_Model-(Fall_Lake_Area_Model*Climate_Reducer)
+Fall_Lake_Area_Model = (Lake_Area_Intercept) + (Previous_Lake_Area_Coefficent * Lake_Area_Model) + (Blitzen_R_WY_CMS_Coefficent * Blitzen_R_Dis_Acutal)
+Fishing_Area_Hectares = 5000
+Fishing_Crew_Multiplier = 1
+Fishing_Efficency = 0.95
+Flex_Adult_Reuction_Rate_Bellmore = IF Lake_Area_Input < Lake_Area_Fished THEN 0.95 ELSE (Lake_Area_Fished/Lake_Area_Input)*Fishing_Efficency
+FMR_Multiplier = 0.75
+Growth_Co = 0.13327
+Immigrants_Age_1 = Population_Age_1*Immigration_Rate
+Immigrants_Age_10 = Population_Age_10*Immigration_Rate
+Immigrants_Age_11 = Population_Age_11*Immigration_Rate
+Immigrants_Age_12 = Population_Age_12*Immigration_Rate
+Immigrants_Age_13 = Population_Age_13*Immigration_Rate
+Immigrants_Age_14 = Population_Age_14*Immigration_Rate
+Immigrants_Age_15 = Population_Age_15*Immigration_Rate
+Immigrants_Age_16 = Population_Age_16*Immigration_Rate
+Immigrants_Age_17 = Population_Age_17*Immigration_Rate
+Immigrants_Age_18 = Population_Age_18*Immigration_Rate
+Immigrants_Age_19 = Population_Age_19*Immigration_Rate
+Immigrants_Age_2 = Population_Age_2*Immigration_Rate
+Immigrants_Age_20 = Population_Age_20*Immigration_Rate
+Immigrants_Age_3 = Population_Age_3*Immigration_Rate
+Immigrants_Age_4 = Population_Age_4*Immigration_Rate
+Immigrants_Age_5 = Population_Age_5*Immigration_Rate
+Immigrants_Age_6 = Population_Age_6*Immigration_Rate
+Immigrants_Age_7 = Population_Age_7*Immigration_Rate
+Immigrants_Age_8 = Population_Age_8*Immigration_Rate
+Immigrants_Age_9 = Population_Age_9*Immigration_Rate
+Immigration_Rate = 0
+Inst_Mortality_Mortality_Age_1 = Instantaneous_Mortality_Rate_Coefficent*((Average_Length_Age_1/L_Inf)^(-1.5))
+Inst_Mortality_Mortality_Age_10 = Instantaneous_Mortality_Rate_Coefficent*((Average_Length_Age_10/L_Inf)^(-1.5))
+Inst_Mortality_Mortality_Age_11 = Instantaneous_Mortality_Rate_Coefficent*((Average_Length_Age_11/L_Inf)^(-1.5))
+Inst_Mortality_Mortality_Age_12 = Instantaneous_Mortality_Rate_Coefficent*((Average_Length_Age_12/L_Inf)^(-1.5))
+Inst_Mortality_Mortality_Age_13 = Instantaneous_Mortality_Rate_Coefficent*((Average_Length_Age_13/L_Inf)^(-1.5))
+Inst_Mortality_Mortality_Age_14 = Instantaneous_Mortality_Rate_Coefficent*((Average_Length_Age_14/L_Inf)^(-1.5))
+Inst_Mortality_Mortality_Age_15 = Instantaneous_Mortality_Rate_Coefficent*((Average_Length_Age_15/L_Inf)^(-1.5))
+Inst_Mortality_Mortality_Age_16 = Instantaneous_Mortality_Rate_Coefficent*((Average_Length_Age_16/L_Inf)^(-1.5))
+Inst_Mortality_Mortality_Age_17 = Instantaneous_Mortality_Rate_Coefficent*((Average_Length_Age_17/L_Inf)^(-1.5))
+Inst_Mortality_Mortality_Age_18 = Instantaneous_Mortality_Rate_Coefficent*((Average_Length_Age_18/L_Inf)^(-1.5))
+Inst_Mortality_Mortality_Age_19 = Instantaneous_Mortality_Rate_Coefficent*((Average_Length_Age_19/L_Inf)^(-1.5))
+Inst_Mortality_Mortality_Age_2 = Instantaneous_Mortality_Rate_Coefficent*((Average_Length_Age_2/L_Inf)^(-1.5))
+Inst_Mortality_Mortality_Age_20 = Instantaneous_Mortality_Rate_Coefficent*((Average_Length_Age_20/L_Inf)^(-1.5))
+Inst_Mortality_Mortality_Age_3 = Instantaneous_Mortality_Rate_Coefficent*((Average_Length_Age_3/L_Inf)^(-1.5))
+Inst_Mortality_Mortality_Age_4 = Instantaneous_Mortality_Rate_Coefficent*((Average_Length_Age_4/L_Inf)^(-1.5))
+Inst_Mortality_Mortality_Age_5 = Instantaneous_Mortality_Rate_Coefficent*((Average_Length_Age_5/L_Inf)^(-1.5))
+Inst_Mortality_Mortality_Age_6 = Instantaneous_Mortality_Rate_Coefficent*((Average_Length_Age_6/L_Inf)^(-1.5))
+Inst_Mortality_Mortality_Age_7 = Instantaneous_Mortality_Rate_Coefficent*((Average_Length_Age_7/L_Inf)^(-1.5))
+Inst_Mortality_Mortality_Age_8 = Instantaneous_Mortality_Rate_Coefficent*((Average_Length_Age_8/L_Inf)^(-1.5))
+Inst_Mortality_Mortality_Age_9 = Instantaneous_Mortality_Rate_Coefficent*((Average_Length_Age_9/L_Inf)^(-1.5))
+Instantaneous_Mortality_Rate_Coefficent = 0.06
+Intial_Stochatic_Lake_Area = 15000
+Juvenile_Reduction_Rate = 0
+Juvenile_Reduction_Rate_Actual = IF (TIME < Removal_Implementation_Year) THEN 0 ELSE Juvenile_Reduction_Rate
+Juvenile_Reduction_Rate_Age_1 = IF Average_Length_Age_1 > Length_of_Juvenile_Reduction THEN 0 ELSE Juvenile_Reduction_Rate_Actual
+Juvenile_Reduction_Rate_Age_2 = IF Average_Length_Age_2 > Length_of_Juvenile_Reduction THEN 0 ELSE Juvenile_Reduction_Rate_Actual
+Juvenile_Reduction_Rate_Age_3 = IF Average_Length_Age_3 > Length_of_Juvenile_Reduction THEN 0 ELSE Juvenile_Reduction_Rate_Actual
+Kg_to_g_Conversion = 1000
+L_Inf = 818.02754
+Lake_Area = GRAPH(TIME)
+(1.0, 15000), (2.0, 15000), (3.0, 15000), (4.0, 15000), (5.0, 15000), (6.0, 15000), (7.0, 15000), (8.0, 15000), (9.0, 15000), (10.0, 15000), (11.0, 15000), (12.0, 15000), (13.0, 15000), (14.0, 15000), (15.0, 15000), (16.0, 15000), (17.0, 15000), (18.0, 15000), (19.0, 15000), (20.0, 15000), (21.0, 15000), (22.0, 15000), (23.0, 15000), (24.0, 15000), (25.0, 15000), (26.0, 15000), (27.0, 15000), (28.0, 15000), (29.0, 15000), (30.0, 15000), (31.0, 15000), (32.0, 15000), (33.0, 15000), (34.0, 15000), (35.0, 15000), (36.0, 15000), (37.0, 15000), (38.0, 15000), (39.0, 15000), (40.0, 15000), (41.0, 15000), (42.0, 15000), (43.0, 15000), (44.0, 15000), (45.0, 15000), (46.0, 15000), (47.0, 15000), (48.0, 15000), (49.0, 15000), (50.0, 15000), (51.0, 12602), (52.0, 15303), (53.0, 9576), (54.0, 24475), (55.0, 28069), (56.0, 18623), (57.0, 25956), (58.0, 18710), (59.0, 13450), (60.0, 19643), (61.0, 15682), (62.0, 16290), (63.0, 15853), (64.0, 31380), (65.0, 24960), (66.0, 18740), (67.0, 16040), (68.0, 18814), (69.0, 28858), (70.0, 28457), (71.0, 15005), (72.0, 16174), (73.0, 782), (74.0, 500), (75.0, 1284), (76.0, 6726), (77.0, 13224), (78.0, 11262), (79.0, 10141), (80.0, 593), (81.0, 7770), (82.0, 6831), (83.0, 14331), (84.0, 17727), (85.0, 11924), (86.0, 12037), (87.0, 18141), (88.0, 17466), (89.0, 8121), (90.0, 14874), (91.0, 17804), (92.0, 20042), (93.0, 16121), (94.0, 20079), (95.0, 37816), (96.0, 55974), (97.0, 46603), (98.0, 50073), (99.0, 40716), (100.0, 32458), (101.0, 38210), (102.0, 23789), (103.0, 19686), (104.0, 1420), (105.0, 11670), (106.0, 12028), (107.0, 14384), (108.0, 14852), (109.0, 22412), (110.0, 35210), (111.0, 33382), (112.0, 24642), (113.0, 19148), (114.0, 11694), (115.0, 4175), (116.0, 3977), (117.0, 4713), (118.0, 14176), (119.0, 15572), (120.0, 10306), (121.0, 5950), (122.0, 14593), (123.0, 34582), (124.0, 25919), (125.0, 17581), (126.0, 8902), (127.0, 500), (128.0, 820), (129.0, 3439), (130.0, 2567)
+Lake_Area_Fished = (Fishing_Area_Hectares*Fishing_Crew_Multiplier)
+Lake_Area_Input = Lake_Area
+Lake_Area_Intercept = -16400
+Lake_Fluctuation_Intiation_Year = 50
+Length_of_Adult_Reduction = 250
+Length_of_Juvenile_Reduction = 250
+LM_50 = 309.67
+LM_95 = 364.67
+LW_Lake_Area_CH = 0
+LW_Lake_Area_Rotenone = 0
+Mature_Carp_Biomass = Total_Mature_Biomass_Age_0 + Total_Mature_Biomass_Age_10 + Total_Mature_Biomass_Age_16 + Total_Mature_Biomass_Age_17 + Total_Mature_Biomass_Age_18 + Total_Mature_Biomass_Age_19 + Total_Mature_Biomass_Age_20 + Total_Mature_Biomass_Age_6 + Total_Mature_Biomass_Age_7 + Total_Mature_Biomass_Age_8 + Total_Mature_Biomass_Age_9 + Total_Mature_Biomass_Age_1 + Total_Mature_Biomass_Age_11 + Total_Mature_Biomass_Age_12 + Total_Mature_Biomass_Age_13 + Total_Mature_Biomass_Age_14 + Total_Mature_Biomass_Age_15 + Total_Mature_Biomass_Age_2 + Total_Mature_Biomass_Age_3 + Total_Mature_Biomass_Age_4 + Total_Mature_Biomass_Age_5
+Mature_Carp_Biomass_kg_per_ha = Mature_Carp_Biomass/Lake_Area_Input
+Mean_Blitzen_R_Dis = IF Climatic_Multiplier_Mean = 0 THEN 1246.82 ELSE 1246.82 - (1246.82*Climatic_Multiplier_Mean)
+"Non-Mature_Carp_Biomass" = "Total_Non-Mature_Biomass_Age_0" + "Total_Non-Mature_Biomass_Age_1" + "Tota_Non-Mature_Biomass_Age_10" + "Tota_Non-Mature_Biomass_Age_11" + "Tota_Non-Mature_Biomass_Age_12" + "Tota_Non-Mature_Biomass_Age_13" + "Tota_Non-Mature_Biomass_Age_14" + "Tota_Non-Mature_Biomass_Age_15" + "Tota_Non-Mature_Biomass_Age_16" + "Tota_Non-Mature_Biomass_Age_17" + "Tota_Non-Mature_Biomass_Age_18" + "Tota_Non-Mature_Biomass_Age_19" + "Total_Non-Mature_Biomass_Age_2" + "Tota_Non-Mature_Biomass_Age_20" + "Tota_Non-Mature_Biomass_Age_3" + "Tota_Non-Mature_Biomass_Age_4" + "Tota_Non-Mature_Biomass_Age_5" + "Tota_Non-Mature_Biomass_Age_6" + "Tota_Non-Mature_Biomass_Age_7" + "Tota_Non-Mature_Biomass_Age_8" + "Total_Non-Mature_Biomass_Age_9"
+"Non-Mature_Carp_Biomass_kg_per_ha" = "Non-Mature_Carp_Biomass"/Lake_Area_Input
+Number_of_Mature_Individuals_per_Ha = Total_Mature/Lake_Area_Input
+Population_Age_11_indi_per_ha = Population_Age_11/Lake_Area_Input
+Population_indi_per_ha_Age_1 = Population_Age_1/Lake_Area_Input
+Population_indi_per_ha_Age_10 = Population_Age_10/Lake_Area_Input
+Population_indi_per_ha_Age_12 = Population_Age_12/Lake_Area_Input
+Population_indi_per_ha_Age_13 = Population_Age_13/Lake_Area_Input
+Population_indi_per_ha_Age_14 = Population_Age_14/Lake_Area_Input
+Population_indi_per_ha_Age_15 = Population_Age_15/Lake_Area_Input
+Population_indi_per_ha_Age_16 = Population_Age_16/Lake_Area_Input
+Population_indi_per_ha_Age_17 = Population_Age_17/Lake_Area_Input
+Population_indi_per_ha_Age_18 = Population_Age_18/Lake_Area_Input
+Population_indi_per_ha_Age_19 = Population_Age_19/Lake_Area_Input
+Population_indi_per_ha_Age_2 = Population_Age_2/Lake_Area_Input
+Population_indi_per_ha_Age_20 = Population_Age_20/Lake_Area_Input
+Population_indi_per_ha_Age_3 = Population_Age_3/Lake_Area_Input
+Population_indi_per_ha_Age_4 = Population_Age_4/Lake_Area_Input
+Population_indi_per_ha_Age_5 = Population_Age_5/Lake_Area_Input
+Population_indi_per_ha_Age_6 = Population_Age_6/Lake_Area_Input
+Population_indi_per_ha_Age_7 = Population_Age_7/Lake_Area_Input
+Population_indi_per_ha_Age_8 = Population_Age_8/Lake_Area_Input
+Population_indi_per_ha_Age_9 = Population_Age_9/Lake_Area_Input
+Previous_Lake_Area_Coefficent = 0.8173
+Probability_Mature_Age_0 = (1+EXP(LN(19)*((Average_Length_Age_0)-(LM_50))/(LM_50-LM_95)))^(-1)
+Probability_Mature_Age_1 =  (1+EXP(LN(19)*((Average_Length_Age_1)-(LM_50))/(LM_50-LM_95)))^(-1)
+Probability_Mature_Age_10 = (1+EXP(LN(19)*((Average_Length_Age_10)-(LM_50))/(LM_50-LM_95)))^(-1)
+Probability_Mature_Age_11 = (1+EXP(LN(19)*((Average_Length_Age_11)-(LM_50))/(LM_50-LM_95)))^(-1)
+Probability_Mature_Age_12 = (1+EXP(LN(19)*((Average_Length_Age_12)-(LM_50))/(LM_50-LM_95)))^(-1)
+Probability_Mature_Age_13 = (1+EXP(LN(19)*((Average_Length_Age_13)-(LM_50))/(LM_50-LM_95)))^(-1)
+Probability_Mature_Age_14 = (1+EXP(LN(19)*((Average_Length_Age_14)-(LM_50))/(LM_50-LM_95)))^(-1)
+Probability_Mature_Age_15 = (1+EXP(LN(19)*((Average_Length_Age_15)-(LM_50))/(LM_50-LM_95)))^(-1)
+Probability_Mature_Age_16 = (1+EXP(LN(19)*((Average_Length_Age_16)-(LM_50))/(LM_50-LM_95)))^(-1)
+Probability_Mature_Age_17 = (1+EXP(LN(19)*((Average_Length_Age_17)-(LM_50))/(LM_50-LM_95)))^(-1)
+Probability_Mature_Age_18 = (1+EXP(LN(19)*((Average_Length_Age_18)-(LM_50))/(LM_50-LM_95)))^(-1)
+Probability_Mature_Age_19 = (1+EXP(LN(19)*((Average_Length_Age_19)-(LM_50))/(LM_50-LM_95)))^(-1)
+Probability_Mature_Age_2 = (1+EXP(LN(19)*((Average_Length_Age_2)-(LM_50))/(LM_50-LM_95)))^(-1)
+Probability_Mature_Age_20 = (1+EXP(LN(19)*((Average_Length_Age_20)-(LM_50))/(LM_50-LM_95)))^(-1)
+Probability_Mature_Age_3 = (1+EXP(LN(19)*((Average_Length_Age_3)-(LM_50))/(LM_50-LM_95)))^(-1)
+Probability_Mature_Age_4 = (1+EXP(LN(19)*((Average_Length_Age_4)-(LM_50))/(LM_50-LM_95)))^(-1)
+Probability_Mature_Age_5 = (1+EXP(LN(19)*((Average_Length_Age_5)-(LM_50))/(LM_50-LM_95)))^(-1)
+Probability_Mature_Age_6 = (1+EXP(LN(19)*((Average_Length_Age_6)-(LM_50))/(LM_50-LM_95)))^(-1)
+Probability_Mature_Age_7 = (1+EXP(LN(19)*((Average_Length_Age_7)-(LM_50))/(LM_50-LM_95)))^(-1)
+Probability_Mature_Age_8 = (1+EXP(LN(19)*((Average_Length_Age_8)-(LM_50))/(LM_50-LM_95)))^(-1)
+Probability_Mature_Age_9 = (1+EXP(LN(19)*((Average_Length_Age_9)-(LM_50))/(LM_50-LM_95)))^(-1)
+Proportion_Age_1 = IF Population_Age_1 = 0 THEN 0 ELSE Population_Age_1/"Total_Age_1-3"
+Proportion_Age_10 = IF Population_Age_10 = 0 THEN 0 ELSE Population_Age_10/"Total_Age_4-20"
+Proportion_Age_11 = IF Population_Age_11 = 0 THEN 0 ELSE Population_Age_11/"Total_Age_4-20"
+Proportion_Age_12 = IF Population_Age_12 = 0 THEN 0 ELSE Population_Age_12/"Total_Age_4-20"
+Proportion_Age_13 = IF Population_Age_13 = 0 THEN 0 ELSE Population_Age_13/"Total_Age_4-20"
+Proportion_Age_14 = IF Population_Age_14 = 0 THEN 0 ELSE Population_Age_14/"Total_Age_4-20"
+Proportion_Age_15 = IF Population_Age_15 = 0 THEN 0 ELSE Population_Age_15/"Total_Age_4-20"
+Proportion_Age_16 = IF Population_Age_16 = 0 THEN 0 ELSE Population_Age_16/"Total_Age_4-20"
+Proportion_Age_17 = IF Population_Age_17 = 0 THEN 0 ELSE Population_Age_17/"Total_Age_4-20"
+Proportion_Age_18 = IF Population_Age_18 = 0 THEN 0 ELSE Population_Age_18/"Total_Age_4-20"
+Proportion_Age_19 = IF Population_Age_19 = 0 THEN 0 ELSE Population_Age_19/"Total_Age_4-20"
+Proportion_Age_2 = IF Population_Age_2 = 0 THEN 0 ELSE Population_Age_2/"Total_Age_1-3"
+Proportion_Age_20 = IF Population_Age_20 = 0 THEN 0 ELSE Population_Age_20/"Total_Age_4-20"
+Proportion_Age_3 = IF Population_Age_3 = 0 THEN 0 ELSE Population_Age_3/"Total_Age_1-3"
+Proportion_Age_4 = IF Population_Age_4 = 0 THEN 0 ELSE Population_Age_4/"Total_Age_4-20"
+Proportion_Age_5 = IF Population_Age_5 = 0 THEN 0 ELSE Population_Age_5/"Total_Age_4-20"
+Proportion_Age_6 = IF Population_Age_6 = 0 THEN 0 ELSE Population_Age_6/"Total_Age_4-20"
+Proportion_Age_7 = IF Population_Age_7 = 0 THEN 0 ELSE Population_Age_7/"Total_Age_4-20"
+Proportion_Age_8 = IF Population_Age_8 = 0 THEN 0 ELSE Population_Age_8/"Total_Age_4-20"
+Proportion_Age_9 = IF Population_Age_9 = 0 THEN 0 ELSE Population_Age_9/"Total_Age_4-20"
+Proportion_of_Consumed_by_AWP_Age_1 = IF Proportion_Age_1 = 0 THEN 0 ELSE Proportion_Age_1*AWP_Juvenile_Proportion
+Proportion_of_Consumed_by_AWP_Age_10 = IF Proportion_Age_10 = 0 THEN 0 ELSE Proportion_Age_10*AWP_Adult_Proportion
+Proportion_of_Consumed_by_AWP_Age_11 = IF Proportion_Age_11 = 0 THEN 0 ELSE Proportion_Age_11*AWP_Adult_Proportion
+Proportion_of_Consumed_by_AWP_Age_12 = IF Proportion_Age_12 = 0 THEN 0 ELSE Proportion_Age_12*AWP_Adult_Proportion
+Proportion_of_Consumed_by_AWP_Age_13 = IF Proportion_Age_13 = 0 THEN 0 ELSE Proportion_Age_13*AWP_Adult_Proportion
+Proportion_of_Consumed_by_AWP_Age_14 = IF Proportion_Age_14 = 0 THEN 0 ELSE Proportion_Age_14*AWP_Adult_Proportion
+Proportion_of_Consumed_by_AWP_Age_15 = IF Proportion_Age_15 = 0 THEN 0 ELSE Proportion_Age_15*AWP_Adult_Proportion
+Proportion_of_Consumed_by_AWP_Age_16 = IF Proportion_Age_16 = 0 THEN 0 ELSE Proportion_Age_16*AWP_Adult_Proportion
+Proportion_of_Consumed_by_AWP_Age_17 = IF Proportion_Age_17 = 0 THEN 0 ELSE Proportion_Age_17*AWP_Adult_Proportion
+Proportion_of_Consumed_by_AWP_Age_18 = IF Proportion_Age_18 = 0 THEN 0 ELSE Proportion_Age_18*AWP_Adult_Proportion
+Proportion_of_Consumed_by_AWP_Age_19 = IF Proportion_Age_19 = 0 THEN 0 ELSE Proportion_Age_19*AWP_Adult_Proportion
+Proportion_of_Consumed_by_AWP_Age_2 = IF Proportion_Age_2 = 0 THEN 0 ELSE Proportion_Age_2*AWP_Juvenile_Proportion
+Proportion_of_Consumed_by_AWP_Age_20 = IF Proportion_Age_20 = 0 THEN 0 ELSE Proportion_Age_20*AWP_Adult_Proportion
+Proportion_of_Consumed_by_AWP_Age_3 = IF Proportion_Age_3 = 0 THEN 0 ELSE Proportion_Age_3*AWP_Juvenile_Proportion
+Proportion_of_Consumed_by_AWP_Age_4 = IF Proportion_Age_4 = 0 THEN 0 ELSE Proportion_Age_4*AWP_Adult_Proportion
+Proportion_of_Consumed_by_AWP_Age_5 = IF Proportion_Age_5 = 0 THEN 0 ELSE Proportion_Age_5*AWP_Adult_Proportion
+Proportion_of_Consumed_by_AWP_Age_6 = IF Proportion_Age_6 = 0 THEN 0 ELSE Proportion_Age_6*AWP_Adult_Proportion
+Proportion_of_Consumed_by_AWP_Age_7 = IF Proportion_Age_7 = 0 THEN 0 ELSE Proportion_Age_7*AWP_Adult_Proportion
+Proportion_of_Consumed_by_AWP_Age_8 = IF Proportion_Age_8 = 0 THEN 0 ELSE Proportion_Age_8*AWP_Adult_Proportion
+Proportion_of_Consumed_by_AWP_Age_9 = IF Proportion_Age_9 = 0 THEN 0 ELSE Proportion_Age_9*AWP_Adult_Proportion
+Proportion_of_Consumed_by_DCC_Age_1 = 0.5
+Proportion_of_Consumed_by_DCC_Age_2 = 0.5
+Proportion_of_Consumed_by_Tern_Age_1 = 0.5
+Proportion_of_Consumed_by_Tern_Age_2 = 0.5
+Removal_Implementation_Year = 50
+Ricker_Stock_Recruitment_Equation = IF (Number_of_Mature_Individuals_per_Ha = 0) THEN 0 ELSE ((Alpha_Coefficent_Recruitment)*(Number_of_Mature_Individuals_per_Ha))*EXP((-Beta_Coefficent_Recruitment)*(Number_of_Mature_Individuals_per_Ha))
+Ricker_Stock_Recruitment_Equation_Actual = Ricker_Stock_Recruitment_Equation*Lake_Area_Input
+Stationary_Adult_Reduction_Rate = 0
+StD_Blitzen_R_Dis = IF Climatic_Multiplier_Std = 0 THEN 454.53 ELSE 454.53 + (454.53*Climatic_Multiplier_Std)
+Theoretical_Length_Age_0 = -0.5482
+"Tota_Non-Mature_Age_16" = Population_Age_16-Total_Mature_Age_16
+"Tota_Non-Mature_Age_9" = Population_Age_9-Total_Mature_Age_9
+"Tota_Non-Mature_Biomass_Age_10" = "Total_Non-Mature_Age_10"*"Average_Weigth_(kg)_Age_10"
+"Tota_Non-Mature_Biomass_Age_11" = "Total_Non-Mature_Age_11"*"Average_Weigth_(kg)_Age_11"
+"Tota_Non-Mature_Biomass_Age_12" = "Total_Non-Mature_Age_12"*"Average_Weigth_(kg)_Age_12"
+"Tota_Non-Mature_Biomass_Age_13" = "Total_Non-Mature_Age_13"*"Average_Weigth_(kg)_Age_13"
+"Tota_Non-Mature_Biomass_Age_14" = "Total_Non-Mature_Age_14"*"Average_Weigth_(kg)_Age_14"
+"Tota_Non-Mature_Biomass_Age_15" = "Total_Non-Mature_Age_15"*"Average_Weigth_(kg)_Age_15"
+"Tota_Non-Mature_Biomass_Age_16" = "Tota_Non-Mature_Age_16"*"Average_Weigth_(kg)_Age_16"
+"Tota_Non-Mature_Biomass_Age_17" = "Total_Non-Mature_Age_17"*"Average_Weigth_(kg)_Age_17"
+"Tota_Non-Mature_Biomass_Age_18" = "Total_Non-Mature_Age_18"*"Average_Weigth_(kg)_Age_18"
+"Tota_Non-Mature_Biomass_Age_19" = "Total_Non-Mature_Age_19"*"Average_Weigth_(kg)_Age_19"
+"Tota_Non-Mature_Biomass_Age_20" = "Total_Non-Mature_Age_20"*"Average_Weigth_(kg)_Age_20"
+"Tota_Non-Mature_Biomass_Age_3" = "Total_Non-Mature_Age_3"*"Average_Weigth_(kg)_Age_3"
+"Tota_Non-Mature_Biomass_Age_4" = "Total_Non-Mature_Age_4"*"Average_Weigth_(kg)_Age_4"
+"Tota_Non-Mature_Biomass_Age_5" = "Total_Non-Mature_Age_5"*"Average_Weigth_(kg)_Age_5"
+"Tota_Non-Mature_Biomass_Age_6" = "Total_Non-Mature_Age_6"*"Average_Weigth_(kg)_Age_6"
+"Tota_Non-Mature_Biomass_Age_7" = "Total_Non-Mature_Age_7"*"Average_Weigth_(kg)_Age_7"
+"Tota_Non-Mature_Biomass_Age_8" = "Total_Non-Mature_Age_8"*"Average_Weigth_(kg)_Age_8"
+"Total_Age_1-3" = Population_Age_1 + Population_Age_2 + Population_Age_3
+"Total_Age_1-3_indi_per_ha" = "Total_Age_1-3"/Lake_Area_Input
+"Total_Age_4-20" = Population_Age_10 + Population_Age_11 + Population_Age_12 + Population_Age_13 + Population_Age_14 + Population_Age_15 + Population_Age_16 + Population_Age_17 + Population_Age_18 + Population_Age_19 + Population_Age_20 + Population_Age_4 + Population_Age_5 + Population_Age_6 + Population_Age_7 + Population_Age_8 + Population_Age_9
+"Total_Age_4-20_indi_per_ha" = "Total_Age_4-20"/Lake_Area_Input
+Total_Avian_Mortality_Rate_Age_1 = IF (TIME<Avian_Predation_Implementation_Year) THEN 0 ELSE (1-(1-Total_Tern_Carp_Consumption_Rate_Age_1)*(1-Total_DCC_Carp_Consumption_Rate_Age_1)*(1-Total_AWP_Carp_Consumption_Rate_Age_1))
+Total_Avian_Mortality_Rate_Age_10 = Total_AWP_Carp_Consumption_Rate_Age_10
+Total_Avian_Mortality_Rate_Age_11 = Total_AWP_Carp_Consumption_Rate_Age_11
+Total_Avian_Mortality_Rate_Age_12 = Total_AWP_Carp_Consumption_Rate_Age_12
+Total_Avian_Mortality_Rate_Age_13 = Total_AWP_Carp_Consumption_Rate_Age_13
+Total_Avian_Mortality_Rate_Age_14 = Total_AWP_Carp_Consumption_Rate_Age_14
+Total_Avian_Mortality_Rate_Age_15 = Total_AWP_Carp_Consumption_Rate_Age_15
+Total_Avian_Mortality_Rate_Age_16 = Total_AWP_Carp_Consumption_Rate_Age_16
+Total_Avian_Mortality_Rate_Age_17 = Total_AWP_Carp_Consumption_Rate_Age_17
+Total_Avian_Mortality_Rate_Age_18 = Total_AWP_Carp_Consumption_Rate_Age_18
+Total_Avian_Mortality_Rate_Age_19 = Total_AWP_Carp_Consumption_Rate_Age_19
+Total_Avian_Mortality_Rate_Age_2 = IF (TIME<Avian_Predation_Implementation_Year) THEN 0 ELSE (1-(1-Total_Tern_Carp_Consumption_Rate_Age_2)*(1-Total_DCC_Carp_Consumption_Rate_Age_2)*(1-Total_AWP_Carp_Consumption_Rate_Age_2))
+Total_Avian_Mortality_Rate_Age_20 = Total_AWP_Carp_Consumption_Rate_Age_20
+Total_Avian_Mortality_Rate_Age_3 = Total_AWP_Carp_Consumption_Rate_Age_3
+Total_Avian_Mortality_Rate_Age_4 = Total_AWP_Carp_Consumption_Rate_Age_4
+Total_Avian_Mortality_Rate_Age_5 = Total_AWP_Carp_Consumption_Rate_Age_5
+Total_Avian_Mortality_Rate_Age_6 = Total_AWP_Carp_Consumption_Rate_Age_6
+Total_Avian_Mortality_Rate_Age_7 = Total_AWP_Carp_Consumption_Rate_Age_7
+Total_Avian_Mortality_Rate_Age_8 = Total_AWP_Carp_Consumption_Rate_Age_8
+Total_Avian_Mortality_Rate_Age_9 = Total_AWP_Carp_Consumption_Rate_Age_9
+Total_AWP_Carp_Consumption_Individuals_Age_1 = (Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_AWP/"Average_Weigth_(g)_Age_1")
+Total_AWP_Carp_Consumption_Individuals_Age_10 = (Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_AWP/"Average_Weigth_(g)_Age_2")
+Total_AWP_Carp_Consumption_Individuals_Age_11 = (Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_AWP/"Average_Weigth_(g)_Age_2")
+Total_AWP_Carp_Consumption_Individuals_Age_12 = (Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_AWP/"Average_Weigth_(g)_Age_2")*Proportion_of_Consumed_by_AWP_Age_12
+Total_AWP_Carp_Consumption_Individuals_Age_13 = (Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_AWP/"Average_Weigth_(g)_Age_2")
+Total_AWP_Carp_Consumption_Individuals_Age_14 = (Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_AWP/"Average_Weigth_(g)_Age_2")
+Total_AWP_Carp_Consumption_Individuals_Age_15 = (Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_AWP/"Average_Weigth_(g)_Age_2")
+Total_AWP_Carp_Consumption_Individuals_Age_16 = (Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_AWP/"Average_Weigth_(g)_Age_2")
+Total_AWP_Carp_Consumption_Individuals_Age_17 = (Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_AWP/"Average_Weigth_(g)_Age_2")
+Total_AWP_Carp_Consumption_Individuals_Age_18 = (Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_AWP/"Average_Weigth_(g)_Age_2")
+Total_AWP_Carp_Consumption_Individuals_Age_19 = (Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_AWP/"Average_Weigth_(g)_Age_2")
+Total_AWP_Carp_Consumption_Individuals_Age_2 = (Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_AWP/"Average_Weigth_(g)_Age_2")
+Total_AWP_Carp_Consumption_Individuals_Age_20 = (Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_AWP/"Average_Weigth_(g)_Age_2")
+Total_AWP_Carp_Consumption_Individuals_Age_3 = (Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_AWP/"Average_Weigth_(g)_Age_2")
+Total_AWP_Carp_Consumption_Individuals_Age_4 = (Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_AWP/"Average_Weigth_(g)_Age_2")
+Total_AWP_Carp_Consumption_Individuals_Age_5 = (Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_AWP/"Average_Weigth_(g)_Age_2")
+Total_AWP_Carp_Consumption_Individuals_Age_6 = (Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_AWP/"Average_Weigth_(g)_Age_2")
+Total_AWP_Carp_Consumption_Individuals_Age_7 = (Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_AWP/"Average_Weigth_(g)_Age_2")
+Total_AWP_Carp_Consumption_Individuals_Age_8 = (Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_AWP/"Average_Weigth_(g)_Age_2")
+Total_AWP_Carp_Consumption_Individuals_Age_9 = (Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_AWP/"Average_Weigth_(g)_Age_2")
+Total_AWP_Carp_Consumption_Rate_Age_1 = IF Population_Age_1 = 0 THEN 0 ELSE (Total_AWP_Carp_Consumption_Individuals_Age_1/Population_Age_1)*Proportion_of_Consumed_by_AWP_Age_1
+Total_AWP_Carp_Consumption_Rate_Age_10 = IF Population_Age_10 = 0 THEN 0 ELSE (Total_AWP_Carp_Consumption_Individuals_Age_10/Population_Age_10)*Proportion_of_Consumed_by_AWP_Age_10
+Total_AWP_Carp_Consumption_Rate_Age_11 = IF Population_Age_11 = 0 THEN 0 ELSE (Total_AWP_Carp_Consumption_Individuals_Age_11/Population_Age_11)*Proportion_of_Consumed_by_AWP_Age_11
+Total_AWP_Carp_Consumption_Rate_Age_12 = IF Population_Age_12 = 0 THEN 0 ELSE Total_AWP_Carp_Consumption_Individuals_Age_12/Population_Age_12
+Total_AWP_Carp_Consumption_Rate_Age_13 = IF Population_Age_13 = 0 THEN 0 ELSE (Total_AWP_Carp_Consumption_Individuals_Age_13/Population_Age_13)*Proportion_of_Consumed_by_AWP_Age_13
+Total_AWP_Carp_Consumption_Rate_Age_14 = IF Population_Age_14 = 0 THEN 0 ELSE (Total_AWP_Carp_Consumption_Individuals_Age_14/Population_Age_14)*Proportion_of_Consumed_by_AWP_Age_14
+Total_AWP_Carp_Consumption_Rate_Age_15 = IF Population_Age_15 = 0 THEN 0 ELSE (Total_AWP_Carp_Consumption_Individuals_Age_15/Population_Age_15)*Proportion_of_Consumed_by_AWP_Age_15
+Total_AWP_Carp_Consumption_Rate_Age_16 = IF Population_Age_16 = 0 THEN 0 ELSE (Total_AWP_Carp_Consumption_Individuals_Age_16/Population_Age_16)*Proportion_of_Consumed_by_AWP_Age_16
+Total_AWP_Carp_Consumption_Rate_Age_17 = IF Population_Age_17 = 0 THEN 0 ELSE (Total_AWP_Carp_Consumption_Individuals_Age_17/Population_Age_17)*Proportion_of_Consumed_by_AWP_Age_17
+Total_AWP_Carp_Consumption_Rate_Age_18 = IF Population_Age_18 = 0 THEN 0 ELSE (Total_AWP_Carp_Consumption_Individuals_Age_18/Population_Age_18)*Proportion_of_Consumed_by_AWP_Age_18
+Total_AWP_Carp_Consumption_Rate_Age_19 = IF Population_Age_19 = 0 THEN 0 ELSE (Total_AWP_Carp_Consumption_Individuals_Age_19/Population_Age_19)*Proportion_of_Consumed_by_AWP_Age_19
+Total_AWP_Carp_Consumption_Rate_Age_2 = IF Population_Age_2 = 0 THEN 0 ELSE (Total_AWP_Carp_Consumption_Individuals_Age_2/Population_Age_2)*Proportion_of_Consumed_by_AWP_Age_2
+Total_AWP_Carp_Consumption_Rate_Age_20 = IF Population_Age_20 = 0 THEN 0 ELSE (Total_AWP_Carp_Consumption_Individuals_Age_20/Population_Age_20)*Proportion_of_Consumed_by_AWP_Age_20
+Total_AWP_Carp_Consumption_Rate_Age_3 = IF Population_Age_3 = 0 THEN 0 ELSE (Total_AWP_Carp_Consumption_Individuals_Age_3/Population_Age_3)*Proportion_of_Consumed_by_AWP_Age_3
+Total_AWP_Carp_Consumption_Rate_Age_4 = IF Population_Age_4 = 0 THEN 0 ELSE (Total_AWP_Carp_Consumption_Individuals_Age_4/Population_Age_4)*Proportion_of_Consumed_by_AWP_Age_4
+Total_AWP_Carp_Consumption_Rate_Age_5 = IF Population_Age_5 = 0 THEN 0 ELSE (Total_AWP_Carp_Consumption_Individuals_Age_5/Population_Age_5)*Proportion_of_Consumed_by_AWP_Age_5
+Total_AWP_Carp_Consumption_Rate_Age_6 = IF Population_Age_6 = 0 THEN 0 ELSE (Total_AWP_Carp_Consumption_Individuals_Age_6/Population_Age_6)*Proportion_of_Consumed_by_AWP_Age_6
+Total_AWP_Carp_Consumption_Rate_Age_7 = IF Population_Age_7 = 0 THEN 0 ELSE (Total_AWP_Carp_Consumption_Individuals_Age_7/Population_Age_7)*Proportion_of_Consumed_by_AWP_Age_7
+Total_AWP_Carp_Consumption_Rate_Age_8 = IF Population_Age_8 = 0 THEN 0 ELSE (Total_AWP_Carp_Consumption_Individuals_Age_8/Population_Age_8)*Proportion_of_Consumed_by_AWP_Age_8
+Total_AWP_Carp_Consumption_Rate_Age_9 = IF Population_Age_9 = 0 THEN 0 ELSE (Total_AWP_Carp_Consumption_Individuals_Age_9/Population_Age_9)*Proportion_of_Consumed_by_AWP_Age_9
+Total_AWP_Carp_Consumtion_Annually_Grams = ((Average_AWP_Daily_Consumption_in_g)*(Average_Yearly_Diet_Composition)*(Average_AWP_Days_Present)*(Average_AWP_Colony_Size))
+Total_Biomass_Age_0 = Recruitment*"Average_Weigth_(kg)_Age_0"
+Total_Biomass_Age_1 = Population_Age_1*"Average_Weigth_(kg)_Age_1"
+Total_Biomass_Age_10 = Population_Age_10*"Average_Weigth_(kg)_Age_10"
+Total_Biomass_Age_11 = Population_Age_11*"Average_Weigth_(kg)_Age_11"
+Total_Biomass_Age_12 = Population_Age_12*"Average_Weigth_(kg)_Age_12"
+Total_Biomass_Age_13 = Population_Age_13*"Average_Weigth_(kg)_Age_13"
+Total_Biomass_Age_14 = Population_Age_14*"Average_Weigth_(kg)_Age_14"
+Total_Biomass_Age_15 = Population_Age_15*"Average_Weigth_(kg)_Age_15"
+Total_Biomass_Age_16 = Population_Age_16*"Average_Weigth_(kg)_Age_16"
+Total_Biomass_Age_17 = Population_Age_17*"Average_Weigth_(kg)_Age_17"
+Total_Biomass_Age_18 = Population_Age_18*"Average_Weigth_(kg)_Age_18"
+Total_Biomass_Age_19 = Population_Age_19*"Average_Weigth_(kg)_Age_19"
+Total_Biomass_Age_2 = Population_Age_2*"Average_Weigth_(kg)_Age_2"
+Total_Biomass_Age_20 = Population_Age_20*"Average_Weigth_(kg)_Age_20"
+Total_Biomass_Age_3 = Population_Age_3*"Average_Weigth_(kg)_Age_3"
+Total_Biomass_Age_4 = Population_Age_4*"Average_Weigth_(kg)_Age_4"
+Total_Biomass_Age_5 = Population_Age_5*"Average_Weigth_(kg)_Age_5"
+Total_Biomass_Age_6 = Population_Age_6*"Average_Weigth_(kg)_Age_6"
+Total_Biomass_Age_7 = Population_Age_7*"Average_Weigth_(kg)_Age_7"
+Total_Biomass_Age_8 = Population_Age_8*"Average_Weigth_(kg)_Age_8"
+Total_Biomass_Age_9 = Population_Age_9*"Average_Weigth_(kg)_Age_9"
+Total_Carp_Biomass = "Non-Mature_Carp_Biomass" + Mature_Carp_Biomass
+"Total_Carp_Biomass_(Log)" = LOG10(Total_Carp_Biomass_kg_per_ha)
+Total_Carp_Biomass_kg_per_ha = Total_Carp_Biomass/Lake_Area_Input
+Total_DCC_Carp_Consumption_Individuals_Age_1 = (Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_DCC/"Average_Weigth_(g)_Age_1")
+Total_DCC_Carp_Consumption_Individuals_Age_2 = (Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_DCC/"Average_Weigth_(g)_Age_2")
+Total_DCC_Carp_Consumption_Rate_Age_1 = IF Population_Age_1 = 0 THEN 0 ELSE (Total_DCC_Carp_Consumption_Individuals_Age_1/Population_Age_1)*Proportion_of_Consumed_by_DCC_Age_1
+Total_DCC_Carp_Consumption_Rate_Age_2 = IF Population_Age_2 = 0 THEN 0 ELSE (Total_DCC_Carp_Consumption_Individuals_Age_2/Population_Age_2)*Proportion_of_Consumed_by_DCC_Age_2
+Total_DCC_Carp_Consumtion_Annually_Grams =  ((Average_DCC_Daily_Consumption_in_g)*(Average_Yearly_Diet_Composition)*(Average_DCC_Days_Present)*(Average_DCC_Colony_Size))
+Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_AWP = Total_AWP_Carp_Consumtion_Annually_Grams
+Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_DCC = Total_DCC_Carp_Consumtion_Annually_Grams
+Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_Term = Total_Tern_Carp_Consumtion_Annually_Grams
+Total_Mature = Total_Mature_Age_1 + Total_Mature_Age_10 + Total_Mature_Age_11 + Total_Mature_Age_12 + Total_Mature_Age_13 + Total_Mature_Age_14 + Total_Mature_Age_15 + Total_Mature_Age_16 + Total_Mature_Age_17 + Total_Mature_Age_18 + Total_Mature_Age_19 + Total_Mature_Age_2 + Total_Mature_Age_20 + Total_Mature_Age_3 + Total_Mature_Age_4 + Total_Mature_Age_5 + Total_Mature_Age_6 + Total_Mature_Age_7 + Total_Mature_Age_8 + Total_Mature_Age_9
+Total_Mature_Age_0 = Probability_Mature_Age_0*Recruitment
+Total_Mature_Age_1 = Probability_Mature_Age_1*Population_Age_1
+Total_Mature_Age_10 = Probability_Mature_Age_10*Population_Age_10
+Total_Mature_Age_11 = Probability_Mature_Age_11*Population_Age_11
+Total_Mature_Age_12 = Probability_Mature_Age_12*Population_Age_12
+Total_Mature_Age_13 = Probability_Mature_Age_13*Population_Age_13
+Total_Mature_Age_14 = Probability_Mature_Age_14*Population_Age_14
+Total_Mature_Age_15 = Probability_Mature_Age_15*Population_Age_15
+Total_Mature_Age_16 = Probability_Mature_Age_16*Population_Age_16
+Total_Mature_Age_17 = Probability_Mature_Age_17*Population_Age_17
+Total_Mature_Age_18 = Probability_Mature_Age_18*Population_Age_18
+Total_Mature_Age_19 = Probability_Mature_Age_19*Population_Age_19
+Total_Mature_Age_2 = Probability_Mature_Age_2*Population_Age_2
+Total_Mature_Age_20 = Probability_Mature_Age_20*Population_Age_20
+Total_Mature_Age_3 = Probability_Mature_Age_3*Population_Age_3
+Total_Mature_Age_4 = Probability_Mature_Age_4*Population_Age_4
+Total_Mature_Age_5 = Probability_Mature_Age_5*Population_Age_5
+Total_Mature_Age_6 = Probability_Mature_Age_6*Population_Age_6
+Total_Mature_Age_7 = Probability_Mature_Age_7*Population_Age_7
+Total_Mature_Age_8 = Probability_Mature_Age_8*Population_Age_8
+Total_Mature_Age_9 = Probability_Mature_Age_9*Population_Age_9
+Total_Mature_Biomass_Age_0 = Total_Mature_Age_0*"Average_Weigth_(kg)_Age_0"
+Total_Mature_Biomass_Age_1 = Total_Mature_Age_1*"Average_Weigth_(kg)_Age_1"
+Total_Mature_Biomass_Age_10 = Total_Mature_Age_10*"Average_Weigth_(kg)_Age_10"
+Total_Mature_Biomass_Age_11 = Total_Mature_Age_11*"Average_Weigth_(kg)_Age_11"
+Total_Mature_Biomass_Age_12 = Total_Mature_Age_12*"Average_Weigth_(kg)_Age_12"
+Total_Mature_Biomass_Age_13 = Total_Mature_Age_13*"Average_Weigth_(kg)_Age_13"
+Total_Mature_Biomass_Age_14 = Total_Mature_Age_14*"Average_Weigth_(kg)_Age_14"
+Total_Mature_Biomass_Age_15 = Total_Mature_Age_15*"Average_Weigth_(kg)_Age_15"
+Total_Mature_Biomass_Age_16 = Total_Mature_Age_16*"Average_Weigth_(kg)_Age_16"
+Total_Mature_Biomass_Age_17 = Total_Mature_Age_17*"Average_Weigth_(kg)_Age_17"
+Total_Mature_Biomass_Age_18 = Total_Mature_Age_18*"Average_Weigth_(kg)_Age_18"
+Total_Mature_Biomass_Age_19 = Total_Mature_Age_19*"Average_Weigth_(kg)_Age_19"
+Total_Mature_Biomass_Age_2 = Total_Mature_Age_2*"Average_Weigth_(kg)_Age_2"
+Total_Mature_Biomass_Age_20 = Total_Mature_Age_20*"Average_Weigth_(kg)_Age_20"
+Total_Mature_Biomass_Age_3 = Total_Mature_Age_3*"Average_Weigth_(kg)_Age_3"
+Total_Mature_Biomass_Age_4 = Total_Mature_Age_4*"Average_Weigth_(kg)_Age_4"
+Total_Mature_Biomass_Age_5 = Total_Mature_Age_5*"Average_Weigth_(kg)_Age_5"
+Total_Mature_Biomass_Age_6 = Total_Mature_Age_6*"Average_Weigth_(kg)_Age_6"
+Total_Mature_Biomass_Age_7 = Total_Mature_Age_7*"Average_Weigth_(kg)_Age_7"
+Total_Mature_Biomass_Age_8 = Total_Mature_Age_8*"Average_Weigth_(kg)_Age_8"
+Total_Mature_Biomass_Age_9 = Total_Mature_Age_9*"Average_Weigth_(kg)_Age_9"
+Total_Mortality_Age_10 = (1-(1-DD_Mortality_Age_10)*(1-Adult_Reduction_Rate_Age_10)*(1-Avian_Mortality_Rate_Age_10)*(1-"All_Reduction_(Rotenone)_Actual"))
+Total_Mortality_Age_11 = (1-(1-DD_Mortality_Age_11)*(1-Adult_Reduction_Rate_Age_11)*(1-Avian_Mortality_Rate_Age_11)*(1-"All_Reduction_(Rotenone)_Actual"))
+Total_Mortality_Age_12 = (1-(1-DD_Mortality_Age_12)*(1-Adult_Reduction_Rate_Age_12)*(1-Avian_Mortality_Rate_Age_12)*(1-"All_Reduction_(Rotenone)_Actual"))
+Total_Mortality_Age_13 = (1-(1-DD_Mortality_Age_13)*(1-Adult_Reduction_Rate_Age_13)*(1-Avian_Mortality_Rate_Age_13)*(1-"All_Reduction_(Rotenone)_Actual"))
+Total_Mortality_Age_14 = (1-(1-DD_Mortality_Age_14)*(1-Adult_Reduction_Rate_Age_14)*(1-Avian_Mortality_Rate_Age_14)*(1-"All_Reduction_(Rotenone)_Actual"))
+Total_Mortality_Age_15 = (1-(1-DD_Mortality_Age_15)*(1-Adult_Reduction_Rate_Age_15)*(1-Avian_Mortality_Rate_Age_15)*(1-"All_Reduction_(Rotenone)_Actual"))
+Total_Mortality_Age_16 = (1-(1-DD_Mortality_Age_16)*(1-Adult_Reduction_Rate_Age_16)*(1-Avian_Mortality_Rate_Age_16)*(1-"All_Reduction_(Rotenone)_Actual"))
+Total_Mortality_Age_17 = (1-(1-DD_Mortality_Age_17)*(1-Adult_Reduction_Rate_Age_17)*(1-Avian_Mortality_Rate_Age_17)*(1-"All_Reduction_(Rotenone)_Actual"))
+Total_Mortality_Age_18 = (1-(1-DD_Mortality_Age_18)*(1-Adult_Reduction_Rate_Age_18)*(1-Avian_Mortality_Rate_Age_18)*(1-"All_Reduction_(Rotenone)_Actual"))
+Total_Mortality_Age_19 = (1-(1-DD_Mortality_Age_19)*(1-Adult_Reduction_Rate_Age_19)*(1-Avian_Mortality_Rate_Age_19)*(1-"All_Reduction_(Rotenone)_Actual"))
+Total_Mortality_Age_20 = (1-(1-DD_Mortality_Age_20)*(1-Adult_Reduction_Rate_Age_20)*(1-Avian_Mortality_Rate_Age_20)*(1-"All_Reduction_(Rotenone)_Actual"))
+Total_Mortality_Age_7 = (1-(1-DD_Mortality_Age_7)*(1-Adult_Reduction_Rate_Age_7)*(1-Avian_Mortality_Rate_Age_7)*(1-"All_Reduction_(Rotenone)_Actual"))
+Total_Mortality_Age_8 = (1-(1-DD_Mortality_Age_8)*(1-Adult_Reduction_Rate_Age_8)*(1-Avian_Mortality_Rate_Age_8)*(1-"All_Reduction_(Rotenone)_Actual"))
+Total_Mortality_Age_9 = (1-(1-DD_Mortality_Age_9)*(1-Adult_Reduction_Rate_Age_9)*(1-Avian_Mortality_Rate_Age_9)*(1-"All_Reduction_(Rotenone)_Actual"))
+Total_Mortality_Rate_Actual_Age_1 = Total_Mortality_Rate_Age_1
+Total_Mortality_Rate_Actual_Age_10 = Total_Mortality_Age_10
+Total_Mortality_Rate_Actual_Age_11 = Total_Mortality_Age_11
+Total_Mortality_Rate_Actual_Age_12 = Total_Mortality_Age_12
+Total_Mortality_Rate_Actual_Age_13 = Total_Mortality_Age_13
+Total_Mortality_Rate_Actual_Age_14 = Total_Mortality_Age_14
+Total_Mortality_Rate_Actual_Age_15 = Total_Mortality_Age_15
+Total_Mortality_Rate_Actual_Age_16 = Total_Mortality_Age_16
+Total_Mortality_Rate_Actual_Age_17 = Total_Mortality_Age_17
+Total_Mortality_Rate_Actual_Age_18 = Total_Mortality_Age_18
+Total_Mortality_Rate_Actual_Age_19 = IF Total_Mortality_Age_19 > 0.999 THEN 0.999 ELSE Total_Mortality_Age_19
+Total_Mortality_Rate_Actual_Age_2 = Total_Mortality_Rate_Age_2
+Total_Mortality_Rate_Actual_Age_20 = Total_Mortality_Age_20
+Total_Mortality_Rate_Actual_Age_3 = Total_Mortality_Rate_Age_3
+Total_Mortality_Rate_Actual_Age_4 = Total_Mortality_Rate_Age_4
+Total_Mortality_Rate_Actual_Age_5 = Total_Mortality_Rate_Age_5
+Total_Mortality_Rate_Actual_Age_6 = Total_Mortality_Rate_Age_6
+Total_Mortality_Rate_Actual_Age_7 = Total_Mortality_Age_7
+Total_Mortality_Rate_Actual_Age_8 = Total_Mortality_Age_8
+Total_Mortality_Rate_Actual_Age_9 = Total_Mortality_Age_9
+Total_Mortality_Rate_Age_1 = (1-(1-DD_Mortality_Age_1)*(1-Adult_Reduction_Rate_Age_1)*(1-Juvenile_Reduction_Rate_Age_1)*(1-Avian_Mortality_Rate_Age_1)*(1-"All_Reduction_(Rotenone)_Actual"))
+Total_Mortality_Rate_Age_2 = (1-(1-DD_Mortality_Age_2)*(1-Adult_Reduction_Rate_Age_2)*(1-Juvenile_Reduction_Rate_Age_2)*(1-Avian_Mortality_Rate_Age_2)*(1-"All_Reduction_(Rotenone)_Actual"))
+Total_Mortality_Rate_Age_3 = (1-(1-DD_Mortality_Age_3)*(1-Adult_Reduction_Rate_Age_3)*(1-Juvenile_Reduction_Rate_Age_3)*(1-Avian_Mortality_Rate_Age_3)*(1-"All_Reduction_(Rotenone)_Actual"))
+Total_Mortality_Rate_Age_4 = (1-(1-DD_Mortality_Age_4)*(1-Adult_Reduction_Rate_Age_4)*(1-Avian_Mortality_Rate_Age_4)*(1-"All_Reduction_(Rotenone)_Actual"))
+Total_Mortality_Rate_Age_5 = (1-(1-DD_Mortality_Age_5)*(1-Adult_Reduction_Rate_Age_5)*(1-Avian_Mortality_Rate_Age_5)*(1-"All_Reduction_(Rotenone)_Actual"))
+Total_Mortality_Rate_Age_6 = (1-(1-DD_Mortality_Age_6)*(1-Adult_Reduction_Rate_Age_6)*(1-Avian_Mortality_Rate_Age_6)*(1-"All_Reduction_(Rotenone)_Actual"))
+"Total_Non-Mature" = "Total_Non-Mature_Age_1" + "Total_Non-Mature_Age_10" + "Total_Non-Mature_Age_11" + "Total_Non-Mature_Age_12" + "Total_Non-Mature_Age_13" + "Total_Non-Mature_Age_14" + "Total_Non-Mature_Age_15" + "Tota_Non-Mature_Age_16" + "Total_Non-Mature_Age_17" + "Total_Non-Mature_Age_18" + "Total_Non-Mature_Age_19" + "Total_Non-Mature_Age_2" + "Total_Non-Mature_Age_20" + "Total_Non-Mature_Age_3" + "Total_Non-Mature_Age_4" + "Total_Non-Mature_Age_5" + "Total_Non-Mature_Age_6" + "Total_Non-Mature_Age_7" + "Total_Non-Mature_Age_8" + "Tota_Non-Mature_Age_9"
+"Total_Non-Mature_Age_0" = Recruitment-Total_Mature_Age_0
+"Total_Non-Mature_Age_1" = Population_Age_1-Total_Mature_Age_1
+"Total_Non-Mature_Age_10" = Population_Age_10-Total_Mature_Age_10
+"Total_Non-Mature_Age_11" = Population_Age_11-Total_Mature_Age_11
+"Total_Non-Mature_Age_12" = Population_Age_12-Total_Mature_Age_12
+"Total_Non-Mature_Age_13" = Population_Age_13-Total_Mature_Age_13
+"Total_Non-Mature_Age_14" = Population_Age_14-Total_Mature_Age_14
+"Total_Non-Mature_Age_15" = Population_Age_15-Total_Mature_Age_15
+"Total_Non-Mature_Age_17" = Population_Age_17-Total_Mature_Age_17
+"Total_Non-Mature_Age_18" = Population_Age_18-Total_Mature_Age_18
+"Total_Non-Mature_Age_19" = Population_Age_19-Total_Mature_Age_19
+"Total_Non-Mature_Age_2" = Population_Age_2-Total_Mature_Age_2
+"Total_Non-Mature_Age_20" = Population_Age_20-Total_Mature_Age_20
+"Total_Non-Mature_Age_3" = Population_Age_3-Total_Mature_Age_3
+"Total_Non-Mature_Age_4" = Population_Age_4-Total_Mature_Age_4
+"Total_Non-Mature_Age_5" = Population_Age_5-Total_Mature_Age_5
+"Total_Non-Mature_Age_6" = Population_Age_6-Total_Mature_Age_6
+"Total_Non-Mature_Age_7" = Population_Age_7-Total_Mature_Age_7
+"Total_Non-Mature_Age_8" = Population_Age_8-Total_Mature_Age_8
+"Total_Non-Mature_Biomass_Age_0" = "Total_Non-Mature_Age_0"*"Average_Weigth_(kg)_Age_0"
+"Total_Non-Mature_Biomass_Age_1" = "Total_Non-Mature_Age_1"*"Average_Weigth_(kg)_Age_1"
+"Total_Non-Mature_Biomass_Age_2" = "Total_Non-Mature_Age_2"*"Average_Weigth_(kg)_Age_2"
+"Total_Non-Mature_Biomass_Age_9" = "Tota_Non-Mature_Age_9"*"Average_Weigth_(kg)_Age_9"
+Total_Population = Population_Age_1 + Population_Age_10 + Population_Age_11 + Population_Age_12 + Population_Age_13 + Population_Age_14 + Population_Age_15 + Population_Age_16 + Population_Age_17 + Population_Age_18 + Population_Age_19 + Population_Age_2 + Population_Age_20 + Population_Age_3 + Population_Age_4 + Population_Age_5 + Population_Age_6 + Population_Age_7 + Population_Age_8 + Population_Age_9
+Total_Tern_Carp_Consumption_Individuals_Age_1 = (Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_Term/"Average_Weigth_(g)_Age_1")
+Total_Tern_Carp_Consumption_Individuals_Age_2 = (Total_Grams_of_Carp_Consumtion_Annually_per_hectare_by_Term/"Average_Weigth_(g)_Age_2")
+Total_Tern_Carp_Consumption_Rate_Age_1 = IF Population_Age_1 = 0 THEN 0 ELSE (Total_Tern_Carp_Consumption_Individuals_Age_1/Population_Age_1)*Proportion_of_Consumed_by_Tern_Age_1
+Total_Tern_Carp_Consumption_Rate_Age_2 = IF Population_Age_2 = 0 THEN 0 ELSE (Total_Tern_Carp_Consumption_Individuals_Age_2/Population_Age_2)*Proportion_of_Consumed_by_Tern_Age_2
+Total_Tern_Carp_Consumtion_Annually_Grams = ((Average_Terns_Daily_Consumption_in_g)*(Average_Yearly_Diet_Composition)*(Average_Tern_Days_Present)*(Average_Tern_Colony_Size))
+Type_1 = Diet_Composition_Alpha_Co*Density_Age_1_to_3_kg_per_ha
+{ The model has 675 (675) variables (array expansion in parens).
+  In root model and 0 additional modules with 29 sectors.
+  Stocks: 21 (21) Flows: 63 (63) Converters: 591 (591)
+  Constants: 94 (94) Equations: 560 (560) Graphicals: 1 (1)
+  }
